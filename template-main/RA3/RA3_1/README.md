@@ -27,7 +27,7 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 ## 📌 Prácticas Implementadas  
 
 📂 **Apache Hardening:**  
-- 🔹 **[Práctica 1: CSP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)(#)** – 🛠️ *Configuración inicial de seguridad en Apache.*  
+- 🔹 **[Práctica 1: CSP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)** – 🛠️ *Configuración inicial de seguridad en Apache.*  
 - 🔹 **[[Práctica 2: ](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)](#)** – 🔒 *Configuración HTTPS segura con Let's Encrypt o certificados propios.*  
 - 🔹 **[Apache Hardening Best Practices](#)** – 🏆 *Mejores prácticas y auditoría de seguridad en Apache.*  
 
