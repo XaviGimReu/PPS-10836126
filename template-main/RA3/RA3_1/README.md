@@ -20,7 +20,7 @@ Finalmente, encapsulamos todas estas configuraciones en una **imagen Docker**, a
 
 Para descargar y utilizar la imagen con todas las configuraciones aplicadas, accede a:  
 
-🔗 [**Docker Hub - Apache Hardening**](#) *(Reemplaza con tu enlace real a DockerHub)*  
+🔗 [**[Docker Hub - Apache Hardening](https://hub.docker.com/r/pps10836126/apache-hardening/tags)**](#) *(Reemplaza con tu enlace real a DockerHub)*  
 
 ---
 
