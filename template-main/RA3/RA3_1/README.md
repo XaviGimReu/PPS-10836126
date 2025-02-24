@@ -36,11 +36,6 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 - 🔹 **[Mitigación de ataques DoS con mod_evasive](#)** – 🚨 *Prevención de ataques de denegación de servicio (DoS).*  
 - 🔹 **[Restricción de accesos y permisos](#)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
 
----
-
-💡 **Este repositorio está en constante actualización** para adaptarse a nuevas amenazas y mejores prácticas en seguridad de servidores web.  
-
-🚀 **¡Contribuciones y mejoras son bienvenidas!**  
 
 
 
