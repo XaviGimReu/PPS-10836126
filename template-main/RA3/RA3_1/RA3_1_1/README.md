@@ -44,7 +44,6 @@ Las principales configuraciones incluyen:
 ### **1️⃣ Construcción de la Imagen Docker**
 Para crear la imagen de Apache con las configuraciones aplicadas, ejecuta el siguiente comando:
 
-```sh
 docker build -t apache-hardening -f apache-hardening .
 
 📌 Explicación:
