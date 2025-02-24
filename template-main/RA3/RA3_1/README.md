@@ -28,13 +28,12 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 
 📂 **Apache Hardening:**  
 - 🔹 **[Práctica 1: CSP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)** – 🛠️ *Configuración inicial de seguridad en Apache.*  
-- 🔹 **[[Práctica 2: ](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)](#)** – 🔒 *Configuración HTTPS segura con Let's Encrypt o certificados propios.*  
-- 🔹 **[Apache Hardening Best Practices](#)** – 🏆 *Mejores prácticas y auditoría de seguridad en Apache.*  
+- 🔹 **[Práctica 2: Web Application Firewall (WAF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)** – 🔒 *Configuración HTTPS segura con Let's Encrypt o certificados propios.*  
+- 🔹 **[Práctica 3: OWASP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_3)** – 🏆 *Mejores prácticas y auditoría de seguridad en Apache.*
+- 🔹 **[Práctica 4: Evitar ataques DDoS](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_4)** – 🛡️ *Implementación de reglas OWASP para proteger aplicaciones web.*  
 
 📂 **Certificados:**  
-- 🔹 **[Configuración de ModSecurity (WAF)](#)** – 🛡️ *Implementación de reglas OWASP para proteger aplicaciones web.*  
-- 🔹 **[Mitigación de ataques DoS con mod_evasive](#)** – 🚨 *Prevención de ataques de denegación de servicio (DoS).*  
-- 🔹 **[Restricción de accesos y permisos](#)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
+- 🔹 **[Práctica 5: Instalación de un certificado digital en el servidor Apache](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
 
 
 
