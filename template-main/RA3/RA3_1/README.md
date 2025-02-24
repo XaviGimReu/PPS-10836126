@@ -31,7 +31,7 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 - 🔹 **[[Práctica 2: ](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)](#)** – 🔒 *Configuración HTTPS segura con Let's Encrypt o certificados propios.*  
 - 🔹 **[Apache Hardening Best Practices](#)** – 🏆 *Mejores prácticas y auditoría de seguridad en Apache.*  
 
-📂 **Protección y Seguridad Avanzada:**  
+📂 **Certificados:**  
 - 🔹 **[Configuración de ModSecurity (WAF)](#)** – 🛡️ *Implementación de reglas OWASP para proteger aplicaciones web.*  
 - 🔹 **[Mitigación de ataques DoS con mod_evasive](#)** – 🚨 *Prevención de ataques de denegación de servicio (DoS).*  
 - 🔹 **[Restricción de accesos y permisos](#)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
