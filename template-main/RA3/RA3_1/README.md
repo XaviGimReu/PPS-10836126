@@ -26,14 +26,23 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 
 ## 📌 Prácticas Implementadas  
 
-📁 **Seguridad en Apache**  
-- 🔹 [**Apache Hardening**](#) *(Configuración inicial de seguridad)*  
-- 🔹 [**Certificados SSL/TLS**](#) *(Configuración HTTPS segura con Let's Encrypt o certificados propios)*  
-- 🔹 [**Apache Hardening Best Practices**](#) *(Mejores prácticas y auditoría de seguridad en Apache)*  
+### 📂 Seguridad en Apache  
+
+🔹 **[Apache Hardening](#)**  
+   🛠️ _Configuración inicial de seguridad en Apache._  
+
+🔹 **[Certificados SSL/TLS](#)**  
+   🔒 _Configuración HTTPS segura con Let's Encrypt o certificados propios._  
+
+🔹 **[Apache Hardening Best Practices](#)**  
+   🏆 _Mejores prácticas y auditoría de seguridad en Apache._  
+
+---
 
 💡 **Este repositorio está en constante actualización** para adaptarse a nuevas amenazas y buenas prácticas de seguridad en servidores web.  
 
 🚀 **¡Contribuciones y mejoras son bienvenidas!**  
+
 
 ---
 
