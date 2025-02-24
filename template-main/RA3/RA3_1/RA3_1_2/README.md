@@ -1,4 +1,4 @@
-# Práctica 2 Web Application Firewall (WAF): 
+# Práctica 2: Web Application Firewall (WAF) 
 
 Introduction [INTRO](URL_TASKS) :
 
