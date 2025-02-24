@@ -1,6 +1,6 @@
-# RA3_1
+# RA3_1: Sever Hardening
 
-Introduction [INTRO](URL_TASKS) :
+Introducción [INTRO](URL_TASKS) :
 
 # Tasks
 
