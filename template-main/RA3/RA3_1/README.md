@@ -18,7 +18,7 @@ Finalmente, por cada uno de los apartados que se vayan realizando **imagen Docke
 
 ## 📦 Acceso a las imagenes en Docker Hub  
 
-Para descargar y utilizar la imagen con todas las configuraciones aplicadas, accede a:  
+Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, accede a:  
 
 🔗 [**[Docker Hub - Apache Hardening](https://hub.docker.com/r/pps10836126/apache-hardening/tags)**]
 
