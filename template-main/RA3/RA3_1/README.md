@@ -16,7 +16,7 @@ Finalmente, encapsulamos todas estas configuraciones en una **imagen Docker**, a
 
 ---
 
-## 📦 Acceso a la imagen en Docker Hub  
+## 📦 Acceso a las imagenes en Docker Hub  
 
 Para descargar y utilizar la imagen con todas las configuraciones aplicadas, accede a:  
 
