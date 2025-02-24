@@ -12,7 +12,7 @@ Entre las medidas de **hardening** aplicadas, incluimos:
 - ✅ **Implementación del módulo `mod_evasive`** para mitigar ataques de denegación de servicio (DoS) y limitar accesos sospechosos.  
 - ✅ **Restricción de accesos** y ajuste de permisos para mejorar la seguridad del servidor.  
 
-Finalmente, encapsulamos todas estas configuraciones en una **imagen Docker**, asegurando una implementación **segura, reproducible y fácilmente desplegable** en cualquier entorno.  
+Finalmente, por cada uno de los apartados que se vayan realizando **imagen Docker**, asegurando una implementación **segura, reproducible y fácilmente desplegable** en cualquier entorno.  
 
 ---
 
