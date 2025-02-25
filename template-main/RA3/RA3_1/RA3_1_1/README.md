@@ -116,6 +116,6 @@ Header set Content-Security-Policy "default-src 'self'; script-src 'self'"
 ---
 
 
-## 📬 Contacto
-📧 Para dudas o consultas, contactar con el equipo docente a través de `@alu.edu.gva.es` o mediante **GitHub Issues** en el repositorio de la práctica. 🚀
+## 📬 Referencias
+[RA3_1_2(WAF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)
 
