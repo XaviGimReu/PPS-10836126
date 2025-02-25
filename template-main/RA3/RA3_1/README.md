@@ -95,5 +95,4 @@ docker ps -a
 
 ---
 
-✍️ **Autor:** *Tu Nombre / Equipo*  
-📅 **Última actualización:** *Febrero 2025*  
+**[RA3_1_1(CSP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)**
