@@ -82,7 +82,6 @@ docker images
 ```bash
 docker run -d -p 8080:80 -p 8443:83 --name apache-server apache-hardening
 ```
-✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
 
 4️⃣ **Verificar el estado del contenedor Docker:**
 ```bash
