@@ -38,7 +38,7 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 ---
 
 ## 🔨 **Dockerfile**
-Para automatizar la implementación de estas configuraciones en un contenedor Docker, cree un archivo `Dockerfile` con el siguiente contenido:
+Para automatizar la implementación de todas las configuraciones a implementar en un contenedor Docker, cree un archivo `Dockerfile` con el siguiente contenido:
 
 ```dockerfile
 # Usar Ubuntu como base
