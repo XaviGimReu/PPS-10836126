@@ -72,7 +72,7 @@ chmod 777 /var/log/mod_evasive
 4️⃣ Habilitar el módulo y reiniciar Apache:
 ```bash
 a2enmod evasive
-systemctl restart apache2
+service apache2 reload
 ```
 
 ✅ Ahora el módulo **mod_evasive** está activo y protegiendo Apache contra ataques DoS.
