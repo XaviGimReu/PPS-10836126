@@ -101,7 +101,9 @@ Luego, agregue la siguiente línea en el archivo de configuración del host virt
 ---
 
 ## 🔐 Cerficados digitales en **Apache**
-En realidad, antes de realizar el apartado de configuración **CSP**, deberíamos de configurar correctamente el apartado de la instalación e implementación de un **certificado digital** en **Apache**:
+En realidad, antes de realizar el apartado de configuración **CSP**, deberíamos de configurar correctamente el apartado de la instalación e implementación de un **certificado digital** en **Apache**.
+Por eso, a continuación se especificará un enlace a la parte del **certificado digital** para implementarlo en este punto:
+
 **[RA3_1_5(Certificado digital)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)**
 
 ---
