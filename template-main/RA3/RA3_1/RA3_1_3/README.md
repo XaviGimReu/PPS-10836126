@@ -1,4 +1,4 @@
-# 🐝 Práctica 3: Implementación de OWASP ModSecurity CRS en Apache 
+# 🐝 Práctica 3: OWASP
 
 ## 📌 Introducción a OWASP ModSecurity CRS
 
