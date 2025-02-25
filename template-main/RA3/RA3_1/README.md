@@ -90,9 +90,6 @@ docker ps -a
 
 ![Docker](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/1.%20docker_build%26run.png)
 
----
-
 
 ---
 
-**[RA3_1_1(CSP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)**
