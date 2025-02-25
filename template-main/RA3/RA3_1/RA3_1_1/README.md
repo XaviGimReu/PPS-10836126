@@ -50,6 +50,8 @@ Añada o modifique las siguientes líneas:
 ServerTokens ProductOnly
 ServerSignature Off
 ```
+![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/5.%20eliminaci%C3%B3n_cabeceras.png)
+
 ✅ Con `ServerTokens ProductOnly`, Apache solo revelará el producto (`Apache`), sin la versión ni el sistema operativo.
 ✅ Con `ServerSignature Off`, se elimina completamente la firma del servidor en las páginas de error y listados de directorios.
 
