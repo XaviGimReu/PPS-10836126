@@ -1,4 +1,4 @@
-# 🔥 Práctica 2: Web Application Firewall (WAF)
+# 🧱🔥 Práctica 2: Web Application Firewall (WAF)
 
 ## 📌 Introducción a WAF
 Un **firewall de aplicaciones web (WAF)** es un mecanismo de seguridad que supervisa, filtra o bloquea el tráfico HTTP hacia y desde una aplicación web. A diferencia de los firewalls tradicionales, un WAF puede analizar el contenido de las solicitudes y respuestas HTTP, protegiendo contra amenazas como:
