@@ -63,6 +63,7 @@ Email Address []:
 ```
 📸 **Ejemplo del proceso de generación:**
 
+![creacion certificado](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/8.%20Certificado.png)
 
 ✅ El certificado y la clave privada se almacenarán en `/etc/apache2/ssl/`.
 
@@ -101,6 +102,7 @@ Buscamos y modificamos las siguientes líneas:
 ```
 📸 **Ejemplo del archivo de configuración:**
 
+![configuracion certificado](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/9.%20Certificado-2.png)
 
 ✅ Ahora, nuestro servidor Apache está configurado para manejar conexiones HTTPS con el certificado autofirmado.
 
@@ -122,6 +124,7 @@ Y añadimos la línea:
 
 📸 **Ejemplo del archivo `/etc/hosts`:**
 
+![etc/hosts](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/10.%20etc_hosts.png)
 
 ---
 
@@ -155,6 +158,7 @@ Como el certificado es autofirmado, el navegador mostrará una advertencia. Debe
 
 📸 **Ejemplo de acceso seguro en el navegador:**
 
+![acceso seguro](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Cerficados/1.png)
 
 
 ✅ Ahora, nuestra página se servirá a través de HTTPS con cifrado SSL.
