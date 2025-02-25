@@ -12,16 +12,20 @@ Includes the following:
 .
 ├── RA3
 │   ├── RA3_1
-│   │   ├── asset
-│   │   └── README.md
+│   │   ├── assets
+│   │   └── RA3_1_1
+│   │   └── RA3_1_2
+│   │   └── RA3_1_3
+│   │   └── RA3_1_4
+│   │   └── RA3_1_5
 │   ├── RA3_2
-│   │   ├── asset
+│   │   ├── assets
 │   │   └── README.md
 │   ├── RA3_3
-│   │   ├── asset
+│   │   ├── assets
 │   │   └── README.md
 │   └── RA3_4
-│       ├── asset
+│       ├── assets
 │       └── README.md
 └── README.md
 
