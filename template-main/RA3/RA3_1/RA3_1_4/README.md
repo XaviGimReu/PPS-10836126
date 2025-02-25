@@ -40,10 +40,6 @@ evasive20_module (shared)
 ```bash
 nano /etc/apache2/mods-available/evasive.conf
 ```
-📸 Ejemplo del archivo evasive.conf:
-
-![evasive.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/2.png)
-
 
 2️⃣ Configurar los parámetros básicos:
 ```apache
@@ -57,6 +53,10 @@ nano /etc/apache2/mods-available/evasive.conf
     DOSLogDir           "/var/log/mod_evasive"
 </IfModule>
 ```
+📸 Ejemplo del archivo `evasive.conf`:
+
+![evasive.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/2.png)
+
 
 ✅ **Explicación de la configuración:**
 - **DOSPageCount:** Número de peticiones por segundo permitidas antes del bloqueo.
