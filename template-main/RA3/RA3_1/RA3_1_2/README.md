@@ -87,10 +87,9 @@ Si intentamos enviar un payload malicioso como:
 ```html
 <script>alert(1)</script>
 ```
+![XSS](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/3.png)
 
-ModSecurity bloqueará la solicitud y devolverá un error **403 Forbidden**.
-
-![Intento de XSS](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/WAF/3.%20xss_attempt.png)
+❌ ModSecurity bloqueará la solicitud y devolverá un error **403 Forbidden**.
 
 ### 🔹 WAF en acción
 Al inspeccionar las cabeceras HTTP en la herramienta de desarrolladores del navegador, podemos ver que la solicitud fue bloqueada con un código de estado **403 Forbidden**.
