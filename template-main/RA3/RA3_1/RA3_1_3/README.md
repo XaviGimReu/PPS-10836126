@@ -112,9 +112,6 @@ service apache2 reload
 
 ## 🔍 **Prueba de OWASP ModSecurity CRS en Apache**
 
-
----
-
 ### 🔹 Simulación de ataques reales
 
 **1️⃣ Intento de ejecución remota de comandos:**
