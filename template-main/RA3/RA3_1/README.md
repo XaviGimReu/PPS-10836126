@@ -67,7 +67,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 
 ---
 
-## 🚀 **Construcción del contenedor Docker**
+## 🐳 **Construcción del contenedor Docker**
 1️⃣ **Construir la imagen Docker:**
 ```bash
 docker build -t apache-hardening -f apache-hardening .
