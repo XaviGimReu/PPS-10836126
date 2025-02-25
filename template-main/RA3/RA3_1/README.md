@@ -63,7 +63,7 @@ EXPOSE 80 443
 # Mantener Apache en ejecución
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
-📸 Ejemplo del Dockerfile:
+📸 Ejemplo del **Dockerfile**:
 
 ![DockerFile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Dockerfile.png)
 
@@ -90,7 +90,7 @@ docker run -d -p 8080:80 -p 8443:83 --name apache-server apache-hardening
 docker ps -a
 ```
 
-📸 Ejemplo de construcción de Docker:
+📸 Ejemplo de construcción de **Docker**:
 
 
 ![Docker](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/1.%20docker_build%26run.png)
