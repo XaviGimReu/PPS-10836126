@@ -39,6 +39,9 @@ Y cámbiela a:
 SecRuleEngine On
 ```
 
+📸 **Captura de la configuración de `modsecurity2.conf`:**
+
+
 ![modsecurity](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/1.png)
 
 ✅ Esto activará ModSecurity para analizar y bloquear tráfico malicioso.
@@ -55,6 +58,9 @@ Añada lo siguiente:
     SecRuleEngine On
 </IfModule>
 ```
+
+📸 **Captura de la configuración de `apache2.conf`:**
+
 
 ![apache2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/2.png)
 
@@ -87,12 +93,19 @@ Si intentamos enviar un payload malicioso como:
 ```html
 <script>alert(1)</script>
 ```
+
+📸 **Captura de la prueba XSS:**
+
+
 ![XSS](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/3.png)
 
 ❌ ModSecurity bloqueará la solicitud y devolverá un error **403 Forbidden**.
 
 ### 🔹 WAF en acción
 Al inspeccionar las cabeceras HTTP en la herramienta de desarrolladores del navegador, podemos ver que la solicitud fue bloqueada con un código de estado **403 Forbidden**.
+
+📸 **Captura del bloqueo :**
+
 
 ![Bloqueo](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/4.png)
 
