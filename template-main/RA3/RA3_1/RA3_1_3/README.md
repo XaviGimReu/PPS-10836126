@@ -83,7 +83,7 @@ Para probar que el firewall está funcionando correctamente, agregaremos una reg
 
 1️⃣ Editar el archivo del host virtual de Apache:
 ```bash
-sudo nano /etc/apache2/sites-enabled/default-ssl.conf
+nano /etc/apache2/sites-enabled/default-ssl.conf
 ```
 
 2️⃣ Agregar la siguiente regla dentro del bloque `<VirtualHost>`:
