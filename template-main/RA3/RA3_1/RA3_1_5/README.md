@@ -1,49 +1,48 @@
-# Configuración de un Certificado Digital en Apache
+# 🔐 Configuración de un Certificado Digital en Apache
 
-## Introducción
+## 📌 Introducción a los Certificados Digitales
 
-Un certificado digital permite cifrar las comunicaciones entre un cliente y un servidor, garantizando la privacidad de los datos transmitidos. En esta práctica, configuraremos un certificado SSL autofirmado en Apache, útil para entornos internos, pruebas o intranets.
+Un **certificado digital** permite cifrar las comunicaciones entre el servidor y los clientes mediante SSL/TLS, garantizando la confidencialidad y autenticidad de los datos transmitidos. En esta práctica, configuraremos un certificado autofirmado en Apache.
 
-Aunque un certificado autofirmado no es validado por una autoridad de certificación (CA), cumple su función al proporcionar cifrado SSL/TLS para asegurar la transferencia de información.
+Aunque un **certificado autofirmado** no cuenta con la validación de una Autoridad de Certificación (CA), es útil para entornos internos, pruebas o intranets donde el cifrado es necesario.
 
 ---
 
-## Instalación y Configuración del Certificado SSL
+## ⚙️ Instalación y Configuración del Certificado en Apache
 
-### 1️⃣ Habilitar el módulo SSL en Apache
+### 🔹 1. Habilitar el módulo SSL en Apache
 
-Apache tiene soporte para SSL/TLS, pero debemos habilitarlo con el siguiente comando:
+Para habilitar el soporte para SSL en Apache, ejecuta:
 
 ```bash
-sudo a2enmod ssl
+a2enmod ssl
 ```
 
 Luego, reiniciamos el servicio para aplicar los cambios:
 
 ```bash
-sudo service apache2 restart
+service apache2 reload
 ```
 
 ✅ Ahora, nuestro servidor Apache está listo para manejar conexiones seguras.
 
 ---
 
-### 2️⃣ Generar un Certificado SSL Autofirmado
+### 🔹 2. Generación de un Certificado SSL Autofirmado
 
-Creamos un directorio para almacenar el certificado:
-
-```bash
-sudo mkdir /etc/apache2/ssl
-```
-
-Ahora, generamos la clave privada y el certificado con OpenSSL:
+1️⃣ Creamos un directorio para almacenar el certificado:
 
 ```bash
-sudo openssl req -x509 -nodes -days 365 \
--newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+mkdir /etc/apache2/ssl
 ```
 
-#### Explicación de los parámetros:
+2️⃣ Genera un certificado autofirmado con OpenSSL:
+
+```bash
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+```
+
+#### 📌 Explicación de los parámetros:
 
 - `-x509` → Genera un certificado autofirmado.
 - `-nodes` → No protege la clave con una contraseña.
@@ -51,6 +50,19 @@ sudo openssl req -x509 -nodes -days 365 \
 - `-newkey rsa:2048` → Genera una clave RSA de 2048 bits.
 - `-keyout` → Ubicación de la clave privada.
 - `-out` → Ubicación del certificado generado.
+
+Durante el proceso, se solicitará información como el país, estado, ciudad y el Common Name (CN), donde debes ingresar el dominio del servidor:
+
+```apache
+Country Name (2 letter code) [AU]:ES
+State or Province Name (full name) [Some-State]:Castellon
+Locality Name (eg, city) []:Castellon de la Plana
+Organization Name (eg, company) []:Midominioseguro
+Common Name (e.g. server FQDN or YOUR name) []:www.midominioseguro.com
+Email Address []:
+```
+📸 **Ejemplo del proceso de generación:**
+
 
 ✅ El certificado y la clave privada se almacenarán en `/etc/apache2/ssl/`.
 
@@ -61,7 +73,7 @@ sudo openssl req -x509 -nodes -days 365 \
 Editamos la configuración del VirtualHost SSL:
 
 ```bash
-sudo nano /etc/apache2/sites-available/default-ssl.conf
+nano /etc/apache2/sites-available/default-ssl.conf
 ```
 
 Buscamos y modificamos las siguientes líneas:
@@ -87,6 +99,8 @@ Buscamos y modificamos las siguientes líneas:
     </VirtualHost>
 </IfModule>
 ```
+📸 **Ejemplo del archivo de configuración:**
+
 
 ✅ Ahora, nuestro servidor Apache está configurado para manejar conexiones HTTPS con el certificado autofirmado.
 
@@ -97,7 +111,7 @@ Buscamos y modificamos las siguientes líneas:
 Para poder acceder al dominio local con el certificado SSL, agregamos el siguiente registro en `/etc/hosts`:
 
 ```bash
-sudo nano /etc/hosts
+nano /etc/hosts
 ```
 
 Y añadimos la línea:
@@ -106,6 +120,9 @@ Y añadimos la línea:
 172.17.0.2   www.midominioseguro.com
 ```
 
+📸 **Ejemplo del archivo `/etc/hosts`:**
+
+
 ---
 
 ### 5️⃣ Activar el VirtualHost SSL y Reiniciar Apache
@@ -113,13 +130,13 @@ Y añadimos la línea:
 Activamos la configuración SSL en Apache:
 
 ```bash
-sudo a2ensite default-ssl.conf
+a2ensite default-ssl.conf
 ```
 
 Reiniciamos Apache para aplicar los cambios:
 
 ```bash
-sudo service apache2 restart
+service apache2 reload
 ```
 
 ✅ Apache ahora sirve contenido a través de HTTPS.
@@ -136,28 +153,11 @@ https://www.midominioseguro.com
 
 Como el certificado es autofirmado, el navegador mostrará una advertencia. Debemos aceptar la excepción de seguridad para continuar.
 
+📸 **Ejemplo de acceso seguro en el navegador:**
+
+
+
 ✅ Ahora, nuestra página se servirá a través de HTTPS con cifrado SSL.
-
----
-
-## 🚀 Opcional: Redirigir HTTP a HTTPS
-
-Para forzar a que todas las conexiones sean seguras, agregamos esta configuración en el VirtualHost HTTP (`/etc/apache2/sites-available/000-default.conf`):
-
-```apache
-<VirtualHost *:80>
-    ServerName www.midominioseguro.com
-    Redirect / https://www.midominioseguro.com/
-</VirtualHost>
-```
-
-Si queremos hacer la redirección permanente, usamos:
-
-```apache
-Redirect permanent / https://www.midominioseguro.com/
-```
-
-✅ Con esto, cualquier usuario que intente acceder a `http://www.midominioseguro.com` será redirigido automáticamente a HTTPS.
 
 ---
 
