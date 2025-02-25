@@ -1,4 +1,4 @@
-# Práctica 1: CSP
+# 🔒 Práctica 1: CSP
 
 ## 📌 Introducción a CSP
 La **Política de Seguridad de Contenidos (CSP)** es una capa de seguridad adicional que ayuda a prevenir ataques como **Cross-Site Scripting (XSS)** y otros ataques de inyección de código malicioso. CSP restringe las fuentes desde donde se pueden cargar ciertos tipos de contenido en un sitio web, mejorando así la seguridad del servidor y del usuario final.
