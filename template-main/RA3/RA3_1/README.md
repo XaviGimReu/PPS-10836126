@@ -70,14 +70,27 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ## 🚀 **Construcción del contenedor Docker**
 1️⃣ **Construir la imagen Docker:**
 ```bash
-docker build -t hardenowasp .
+docker build -t apache-hardening -f apache-hardening .
 ```
 
-2️⃣ **Ejecutar el contenedor con los puertos adecuados:**
+2️⃣ **Listar las imágenes Docker:**
+```bash
+docker images
+```
+
+3️⃣ **Ejecutar el contenedor con los puertos adecuados:**
 ```bash
 docker run --detach --rm -p 8080:80 -p 8081:443 --name="hardenowasp" hardenowasp
 ```
 ✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
+
+4️⃣ **Verificar el estado del contenedor Docker:**
+```bash
+docker ps -a
+```
+✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
+
+![Docker](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/1.%20docker_build%26run.png)
 
 ---
 
