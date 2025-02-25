@@ -100,6 +100,10 @@ Luego, agregue la siguiente línea en el archivo de configuración del host virt
 
 ---
 
+## 🔐 Cerficados digitales en **Apache**
+
+---
+
 ## 🛡️  Configurar la cabecera **CSP**
 Para mejorar la seguridad contra ataques XSS y evitar la ejecución de scripts no confiables, agregue la siguiente directiva en la configuración de Apache:
 ```apache
