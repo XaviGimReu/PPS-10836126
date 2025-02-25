@@ -104,10 +104,11 @@ ab -n 1000 -c 50 http://localhost:8080/
 
 3️⃣ Verificar si la IP ha sido bloqueada revisando los logs:
 ```bash
-tail -f /var/log/apache2/error.log
+ls /var/log/mod_evasive
+cat /var/log/mod_evasive/dos-172.17.0.1
 ```
 📸 **Captura de logs de bloqueo:**
-![mod_evasive log](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/DOS/1.png)
+![mod_evasive log](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/5.png)
 
 ✅ Si la prueba ha sido exitosa, algunas solicitudes deberían ser **rechazadas con un código 403 Forbidden**.
 
