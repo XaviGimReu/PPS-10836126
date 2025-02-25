@@ -35,7 +35,35 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 📂 **Certificados:**  
 - 🔹 **[Práctica 5: Certificado digital en Apache](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
 
+## 🔨 **Crear un Dockerfile con esta configuración**
+Para automatizar la implementación de estas configuraciones en un contenedor Docker, cree un archivo `Dockerfile` con el siguiente contenido:
 
+```dockerfile
+FROM httpd:2.4
+
+# Copiar archivos de configuración personalizados
+COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./my-httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+
+# Habilitar módulos y configurar seguridad
+RUN sed -i '/#LoadModule headers_module/s/^#//g' /usr/local/apache2/conf/httpd.conf && \
+    echo 'Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"' >> /usr/local/apache2/conf/httpd.conf && \
+    echo 'Header set Content-Security-Policy "default-src \'self\'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com"' >> /usr/local/apache2/conf/httpd.conf
+```
+
+### 🚀 **Construir y ejecutar el contenedor Docker**
+1️⃣ **Construir la imagen Docker:**
+```bash
+docker build -t hardenowasp .
+```
+
+2️⃣ **Ejecutar el contenedor con los puertos adecuados:**
+```bash
+docker run --detach --rm -p 8080:80 -p 8081:443 --name="hardenowasp" hardenowasp
+```
+✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
+
+---
 
 
 ---
