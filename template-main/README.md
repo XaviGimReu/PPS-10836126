@@ -3,10 +3,10 @@
 Exploration of the ...
 
 Includes the following:
-* [RA3_1](#TODO):
-* [RA3_2](#TODO):
-* [RA3_3](#TODO):
-* [RA3_4](#TODO):
+* [RA3_1](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1):
+* [RA3_2](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2):
+* [RA3_3](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_3):
+* [RA3_4](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_4):
 
 ```
 .
