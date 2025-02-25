@@ -100,43 +100,6 @@ Al inspeccionar las cabeceras HTTP en la herramienta de desarrolladores del nave
 
 ---
 
-## 🐳 **Crear una imagen Docker con Apache y ModSecurity**
-Para facilitar la implementación en otros entornos, podemos crear un contenedor Docker con Apache y ModSecurity preconfigurados.
-
-### 📌 **Dockerfile**
-Cree un archivo `Dockerfile` con el siguiente contenido:
-```dockerfile
-FROM httpd:2.4
-
-# Instalar ModSecurity
-RUN apt update && apt install -y libapache2-mod-security2 && \
-    cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf && \
-    sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /etc/modsecurity/modsecurity.conf
-
-# Habilitar ModSecurity en Apache
-RUN echo '<IfModule security2_module>\nSecRuleEngine On\n</IfModule>' >> /usr/local/apache2/conf/httpd.conf
-
-# Exponer los puertos HTTP y HTTPS
-EXPOSE 80 443
-
-CMD ["httpd-foreground"]
-```
-
-### 🚀 **Construir y ejecutar el contenedor Docker**
-1️⃣ **Construir la imagen Docker:**
-```bash
-docker build -t apache-modsecurity .
-```
-
-2️⃣ **Ejecutar el contenedor con los puertos adecuados:**
-```bash
-docker run --detach --rm -p 8080:80 -p 8081:443 --name="secure-waf" apache-modsecurity
-```
-
-✅ Esto iniciará un servidor Apache con ModSecurity activado y configurado.
-
----
-
 ## 📬 Referencias
 **[RA3_1_1 (CSP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 **[RA3_1_3 (OWASP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_3)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
