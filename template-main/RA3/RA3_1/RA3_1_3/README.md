@@ -106,7 +106,7 @@ SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por
 
 ### 🔄 Reiniciar Apache para aplicar los cambios
 ```bash
-sudo systemctl restart apache2
+service apache2 reload
 ```
 
 ---
