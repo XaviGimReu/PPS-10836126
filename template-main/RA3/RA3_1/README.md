@@ -28,7 +28,7 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 
 📂 **Apache Hardening:**  
 - 🔹 **[Práctica 1: CSP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)** – 🛠️ *Configuración inicial de seguridad en Apache y Configuración de la política CSP.*  
-- 🔹 **[Práctica 2: Web Application Firewall (WAF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)** – 🔒 *Configuración HTTPS segura con Let's Encrypt o certificados propios.*  
+- 🔹 **[Práctica 2: Web Application Firewall (WAF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)** – 🔒 *Securización web mediante la aplicación de reglas.*  
 - 🔹 **[Práctica 3: OWASP](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_3)** – 🛡️ *Implementación de reglas OWASP para proteger aplicaciones web.*
 - 🔹 **[Práctica 4: Evitar ataques DDoS](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_4)** – 🏆 *Mejores prácticas y auditoría de seguridad en Apache.*
 
