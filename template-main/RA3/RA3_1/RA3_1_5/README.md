@@ -175,6 +175,8 @@ Para visualizar la información del certificado en el navegador, haz clic en el 
 
 ✅ Ahora tenemos un **servidor Apache con HTTPS habilitado** mediante un certificado SSL auto-firmado.
 
+---
+
 ## 📬 Referencias
 
 **[RA3_1_1 (CSP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_1)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
