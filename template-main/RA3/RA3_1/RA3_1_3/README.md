@@ -128,6 +128,8 @@ https://localhost:8080/index.html?exec=/bin/bash
 https://localhost:8080/index.html?exec=/../../"
 ```
 📸 **Ejemplo de path traversal bloqueado:**
+
+
 ![Path Traversal](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/4.png)
 
 ✅ **Las reglas OWASP CRS han detectado y bloqueado ambos intentos de ataque.**
