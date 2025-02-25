@@ -103,13 +103,13 @@ Para mejorar la seguridad contra ataques XSS y evitar la ejecución de scripts n
 ```apache
 Header set Content-Security-Policy "default-src 'self'; script-src 'self'"
 ```
+![CSP](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/9.%20Certificado-2.png)
+
 ✅ Este ejemplo establece que:
 - Todo el contenido provenga del mismo origen (`'self'`).
 - Las imágenes pueden cargarse desde cualquier fuente (`img-src *`).
 - Los archivos de medios solo se permiten desde `media1.com` y `media2.com`.
 - Los scripts solo pueden ejecutarse desde `userscripts.example.com`.
-
-![CSP](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/9.%20Certificado-2.png)
 
 ---
 
