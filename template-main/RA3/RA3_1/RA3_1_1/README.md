@@ -98,7 +98,7 @@ Luego, agregue la siguiente línea en el archivo de configuración del host virt
 
 ---
 
-### 🛡️  Configurar la cabecera **CSP**
+## 🛡️  Configurar la cabecera **CSP**
 Para mejorar la seguridad contra ataques XSS y evitar la ejecución de scripts no confiables, agregue la siguiente directiva en la configuración de Apache:
 ```apache
 Header set Content-Security-Policy "default-src 'self'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com"
