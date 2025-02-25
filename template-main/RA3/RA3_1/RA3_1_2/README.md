@@ -38,6 +38,10 @@ Y cámbiela a:
 ```apache
 SecRuleEngine On
 ```
+
+![modsecurity](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/1.png)
+
+
 ✅ Esto activará ModSecurity para analizar y bloquear tráfico malicioso.
 
 ![ModSecurity Config](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/WAF/1.%20modsecurity_config.png)
