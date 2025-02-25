@@ -65,6 +65,8 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 ![DockerFile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Dockerfile.png)
 
+---
+
 ## 🚀 **Docker**
 1️⃣ **Construir la imagen Docker:**
 ```bash
