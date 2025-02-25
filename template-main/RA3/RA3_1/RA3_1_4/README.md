@@ -30,7 +30,7 @@ evasive20_module (shared)
 ```
 📸 Como en la siguiente imagen:
 
-![evasive-module](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/1.png)
+![evasive-module](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/1.png)
 
 ---
 
