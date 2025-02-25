@@ -80,7 +80,7 @@ docker images
 
 3️⃣ **Ejecutar el contenedor con los puertos adecuados:**
 ```bash
-docker run --detach --rm -p 8080:80 -p 8081:443 --name="hardenowasp" hardenowasp
+docker run -d -p 8080:80 -p 8443:83 --name apache-server apache-hardening
 ```
 ✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
 
@@ -88,7 +88,6 @@ docker run --detach --rm -p 8080:80 -p 8081:443 --name="hardenowasp" hardenowasp
 ```bash
 docker ps -a
 ```
-✅ Esto inicia un servidor Apache endurecido con **HSTS y CSP activados.**
 
 ![Docker](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/1.%20docker_build%26run.png)
 
