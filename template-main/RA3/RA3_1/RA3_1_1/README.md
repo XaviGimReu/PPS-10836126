@@ -109,6 +109,8 @@ Header set Content-Security-Policy "default-src 'self'; script-src 'self'"
 - Todo el contenido debe provenir del mismo origen (`'self'`), lo que significa que solo los recursos alojados en el mismo dominio serán permitidos.
 - Los scripts (`script-src`) solo pueden ejecutarse desde el mismo origen (`'self'`), evitando la ejecución de scripts inyectados desde fuentes externas
 
+📌 Nota: Esta configuración de CSP ayuda a mitigar ataques de XSS restringiendo la carga de contenido a solo fuentes de confianza. Se recomienda probar exhaustivamente la política en un entorno de desarrollo antes de implementarla en producción para evitar bloquear contenido legítimo.
+
 ---
 
 ## 🔨 **Crear un Dockerfile con esta configuración**
