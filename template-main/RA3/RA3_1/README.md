@@ -37,20 +37,31 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 
 ---
 
-## 🔨 **Crear un Dockerfile con esta configuración**
+## 🔨 **Dockerfile**
 Para automatizar la implementación de estas configuraciones en un contenedor Docker, cree un archivo `Dockerfile` con el siguiente contenido:
 
 ```dockerfile
-FROM httpd:2.4
+# Usar Ubuntu como base
+FROM ubuntu:latest
 
-# Copiar archivos de configuración personalizados
-COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./my-httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+# Actualizar paquetes e instalar Apache, OpenSSL y herramientas básicas
+RUN apt update && apt install -y \
+    apache2 apache2-utils openssl \
+    nano iproute2 tree bash procps net-tools curl wget \
+    && apt clean
 
-# Habilitar módulos y configurar seguridad
-RUN sed -i '/#LoadModule headers_module/s/^#//g' /usr/local/apache2/conf/httpd.conf && \
-    echo 'Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"' >> /usr/local/apache2/conf/httpd.conf && \
-    echo 'Header set Content-Security-Policy "default-src \'self\'; img-src *; media-src media1.com media2.com; script-src userscripts.example.com"' >> /usr/local/apache2/conf/httpd.conf
+# Coìar la configuración de Apache
+COPY ./apache2.conf /etc/apache2/apache2.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# Crear directorio necesario para Apache
+RUN mkdir -p /run/apache2
+
+# Exponer los puertos HTTP y HTTPS
+EXPOSE 80 443
+
+# Mantener Apache en ejecución
+CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 
 ### 🚀 **Construir y ejecutar el contenedor Docker**
