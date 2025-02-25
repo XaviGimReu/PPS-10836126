@@ -38,8 +38,12 @@ evasive20_module (shared)
 
 1️⃣ Editar la configuración del módulo:
 ```bash
-sudo nano /etc/apache2/mods-available/evasive.conf
+nano /etc/apache2/mods-available/evasive.conf
 ```
+📸 Ejemplo del archivo evasive.conf:
+
+![evasive.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/2.png)
+
 
 2️⃣ Configurar los parámetros básicos:
 ```apache
