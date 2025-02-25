@@ -35,7 +35,7 @@ Date: Mon, 24 Feb 2025 11:01:49 GMT
 Server: Apache/2.4.58 (Ubuntu)
 Content-Type: text/html
 ```
-![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/6.%20eliminaci%C3%B3n_cabeceras-2.png)
+![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/4.%20ejecuci%C3%B3n_cabecera.png)
 
 Aquí, el encabezado `Server` indica la versión específica de Apache y el sistema operativo subyacente.
 
@@ -50,7 +50,7 @@ Añada o modifique las siguientes líneas:
 ServerTokens ProductOnly
 ServerSignature Off
 ```
-![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/5.%20eliminaci%C3%B3n_cabeceras.png)
+![apache2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/5.%20eliminaci%C3%B3n_cabeceras.png)
 
 ✅ Con `ServerTokens ProductOnly`, Apache solo revelará el producto (`Apache`), sin la versión ni el sistema operativo.
 ✅ Con `ServerSignature Off`, se elimina completamente la firma del servidor en las páginas de error y listados de directorios.
@@ -72,6 +72,8 @@ Date: Mon, 24 Feb 2025 11:23:12 GMT
 Server: Apache
 Content-Type: text/html
 ```
+![header](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/6.%20eliminaci%C3%B3n_cabeceras-2.png)
+
 ✅ Ahora, el encabezado `Server` solo muestra `Apache`, sin información adicional.
 
 ---
