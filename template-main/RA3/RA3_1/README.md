@@ -63,6 +63,8 @@ EXPOSE 80 443
 # Mantener Apache en ejecución
 CMD ["apachectl", "-D", "FOREGROUND"]
 ```
+📸 Ejemplo del archivo `evasive.conf`:
+
 ![DockerFile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Dockerfile.png)
 
 ---
