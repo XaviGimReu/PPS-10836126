@@ -123,10 +123,10 @@ https://localhost:8080/index.html?exec=/bin/bash
 
 **2️⃣ Intento de path traversal:**
 ```bash
-curl "http://localhost:8080/index.html?exec=/../../"
+https://localhost:8080/index.html?exec=/../../"
 ```
 📸 **Ejemplo de path traversal bloqueado:**
-![Path Traversal](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP%20ModSecurity%20CRS/5.png)
+![Path Traversal](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/4.png)
 
 ✅ **Las reglas OWASP CRS han detectado y bloqueado ambos intentos de ataque.**
 
