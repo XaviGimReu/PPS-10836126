@@ -7,8 +7,8 @@ Al implementar CSP en un servidor Apache, se puede reducir el riesgo de ejecuci�
 
 ---
 
-## 🏗️ **Práctica CSP**
-### 📌 Configurar la instalación de Apache para:
+## 🏗️ **Configuración de Apache**
+En este apartado se realizarán una serie de configuraciones previas en el servicio Apache para posiblitar la posterior implementación de CSP.
 
 ### 🔹 Deshabilitar el módulo `autoindex`
 Este módulo permite la generación automática de listados de directorios en caso de que no exista un archivo `index.html` o `index.php`. Para desactivarlo, ejecute:
