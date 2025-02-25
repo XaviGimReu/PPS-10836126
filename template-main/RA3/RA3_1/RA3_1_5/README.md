@@ -1,4 +1,4 @@
-# 🔐 Configuración de un Certificado Digital en Apache
+# 🔐 Práctica 5: Certificado Digital en Apache
 
 ## 📌 Introducción a los Certificados Digitales
 
