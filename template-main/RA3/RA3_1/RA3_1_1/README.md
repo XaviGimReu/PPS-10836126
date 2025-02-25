@@ -27,7 +27,6 @@ Para comprobar qué información está siendo expuesta por Apache, ejecute:
 ```bash
 curl --head localhost
 ```
-![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/6.%20eliminaci%C3%B3n_cabeceras-2.png)
 
 Ejemplo de salida antes de la configuración:
 ```
@@ -36,6 +35,8 @@ Date: Mon, 24 Feb 2025 11:01:49 GMT
 Server: Apache/2.4.58 (Ubuntu)
 Content-Type: text/html
 ```
+![curl](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/6.%20eliminaci%C3%B3n_cabeceras-2.png)
+
 Aquí, el encabezado `Server` indica la versión específica de Apache y el sistema operativo subyacente.
 
 #### ✍️ Configurar Apache para ocultar la versión y la firma del servidor
