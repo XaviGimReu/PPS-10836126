@@ -55,14 +55,14 @@ Añada lo siguiente:
 </IfModule>
 ```
 
-✅ Esto asegurará que ModSecurity esté activado cada vez que Apache se inicie.
+![apache2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/2.png)
 
-![Apache Config](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/WAF/2.%20apache2_waf_config.png)
+✅ Esto asegurará que ModSecurity esté activado cada vez que Apache se inicie.
 
 ### 🔄 Reiniciar Apache
 Para aplicar los cambios, reinicie Apache:
 ```bash
-service apache2 restart
+service apache2 reload
 ```
 
 ---
