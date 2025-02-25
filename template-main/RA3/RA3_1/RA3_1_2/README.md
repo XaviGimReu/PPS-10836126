@@ -24,7 +24,7 @@ Luego, copie la configuración recomendada:
 ```bash
 cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 ```
-___
+────── ✦ ──────
 
 ### 🔹 Habilitar ModSecurity en Apache
 Edite el archivo de configuración de ModSecurity:
