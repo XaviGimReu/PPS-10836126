@@ -24,7 +24,7 @@ Luego, copie la configuración recomendada:
 ```bash
 cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 ```
-<hr style="border: 0.2px solid #ccc;">
+<p>&nbsp;</p>
 
 ### 🔹 Habilitar ModSecurity en Apache
 Edite el archivo de configuración de ModSecurity:
@@ -43,6 +43,8 @@ SecRuleEngine On
 ![modsecurity](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/1.png)
 
 ✅ Esto activará ModSecurity para analizar y bloquear tráfico malicioso.
+
+<p>&nbsp;</p>
 
 ### 🔹 Habilitar ModSecurity en la configuración de Apache
 Edite el archivo de configuración de Apache:
