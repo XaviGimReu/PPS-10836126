@@ -24,7 +24,7 @@ Luego, copie la configuración recomendada:
 ```bash
 cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
 ```
-<hr style="border: 0.5px solid #ccc;">
+<hr style="border: 0.2px solid #ccc;">
 
 ### 🔹 Habilitar ModSecurity en Apache
 Edite el archivo de configuración de ModSecurity:
