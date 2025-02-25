@@ -106,10 +106,8 @@ Header set Content-Security-Policy "default-src 'self'; script-src 'self'"
 ![CSP](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/9.%20Certificado-2.png)
 
 ✅ Este ejemplo establece que:
-- Todo el contenido provenga del mismo origen (`'self'`).
-- Las imágenes pueden cargarse desde cualquier fuente (`img-src *`).
-- Los archivos de medios solo se permiten desde `media1.com` y `media2.com`.
-- Los scripts solo pueden ejecutarse desde `userscripts.example.com`.
+- Todo el contenido debe provenir del mismo origen (`'self'`), lo que significa que solo los recursos alojados en el mismo dominio serán permitidos.
+- Los scripts (`script-src`) solo pueden ejecutarse desde el mismo origen (`'self'`), evitando la ejecución de scripts inyectados desde fuentes externas
 
 ---
 
