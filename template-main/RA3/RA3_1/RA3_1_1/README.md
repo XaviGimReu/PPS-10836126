@@ -13,7 +13,7 @@ En este apartado se realizarán una serie de configuraciones previas en el servi
 ### 🔹 Deshabilitar el módulo `autoindex`
 Este módulo permite la generación automática de listados de directorios en caso de que no exista un archivo `index.html` o `index.php`. Para desactivarlo, ejecute:
 ```bash
-sudo a2dismod autoindex
+a2dismod autoindex
 ```
 ![autoindex](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/3.%20deshabilitar_autoindex.png)
 
@@ -42,7 +42,7 @@ Aquí, el encabezado `Server` indica la versión específica de Apache y el sist
 #### ✍️ Configurar Apache para ocultar la versión y la firma del servidor
 Para evitar que esta información sea revelada, modifique el archivo de configuración principal de Apache en:
 ```bash
-sudo nano /etc/apache2/apache2.conf
+nano /etc/apache2/apache2.conf
 ```
 Añada o modifique las siguientes líneas:
 ```apache
@@ -83,7 +83,7 @@ HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obli
 
 Para habilitarlo en Apache, primero active el módulo `headers`:
 ```bash
-sudo a2enmod headers
+a2enmod headers
 service reload apache2
 ```
 Luego, agregue la siguiente línea en el archivo de configuración del host virtual:
