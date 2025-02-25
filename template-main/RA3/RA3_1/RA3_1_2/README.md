@@ -94,7 +94,7 @@ Si intentamos enviar un payload malicioso como:
 ### 🔹 WAF en acción
 Al inspeccionar las cabeceras HTTP en la herramienta de desarrolladores del navegador, podemos ver que la solicitud fue bloqueada con un código de estado **403 Forbidden**.
 
-![WAF en acción](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/WAF/4.%20waf_forbidden.png)
+![Bloqueo](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Web%20Application%20Firewall%20(WAF)/4.png)
 
 ✅ Esto confirma que **ModSecurity está protegiendo nuestra aplicación web de ataques XSS.**
 
