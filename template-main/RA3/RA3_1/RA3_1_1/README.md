@@ -57,7 +57,7 @@ ServerSignature Off
 
 #### 🔄 Reiniciar Apache para aplicar los cambios
 ```bash
-sudo systemctl restart apache2
+service apache2 reload
 ```
 
 #### 🔍 Verificar que los cambios han sido aplicados
@@ -84,7 +84,7 @@ HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obli
 Para habilitarlo en Apache, primero active el módulo `headers`:
 ```bash
 sudo a2enmod headers
-sudo systemctl restart apache2
+service reload apache2
 ```
 Luego, agregue la siguiente línea en el archivo de configuración del host virtual:
 ```apache
