@@ -1,4 +1,4 @@
-# 🛡️ Práctica 4: Protección contra ataques DoS en Apache
+# ⚔️🚫 Práctica 4: Protección contra ataques DoS en Apache
 
 ## 📌 Introducción a mod_evasive
 
