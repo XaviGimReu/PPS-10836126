@@ -35,6 +35,8 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 📂 **Certificados:**  
 - 🔹 **[Práctica 5: Certificado digital en Apache](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)** – 🔑 *Mejorando la seguridad con controles de acceso y permisos adecuados.*  
 
+---
+
 ## 🔨 **Crear un Dockerfile con esta configuración**
 Para automatizar la implementación de estas configuraciones en un contenedor Docker, cree un archivo `Dockerfile` con el siguiente contenido:
 
