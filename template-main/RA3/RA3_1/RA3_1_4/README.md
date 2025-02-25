@@ -106,41 +106,6 @@ tail -f /var/log/apache2/error.log
 📸 **Captura de Apache Bench mostrando bloqueos:**
 ![Apache Bench](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/DOS/2.png)
 
----
-
-## 🐳 **Crear una imagen Docker con mod_evasive preconfigurado**
-
-Para facilitar la implementación en otros entornos, podemos crear un contenedor Docker con **Apache y mod_evasive** ya configurados.
-
-### 📌 **Dockerfile**
-```dockerfile
-FROM httpd:2.4
-
-# Instalar mod_evasive
-RUN apt update && apt install -y libapache2-mod-evasive && \
-    mkdir /var/log/mod_evasive && chmod 777 /var/log/mod_evasive && \
-    echo '<IfModule mod_evasive20.c>\nDOSHashTableSize 3097\nDOSPageCount 2\nDOSSiteCount 50\nDOSPageInterval 1\nDOSSiteInterval 1\nDOSBlockingPeriod 10\nDOSLogDir "/var/log/mod_evasive"\n</IfModule>' \
-    > /etc/apache2/mods-available/evasive.conf && \
-    a2enmod evasive
-
-# Exponer el puerto 80
-EXPOSE 80
-CMD ["httpd-foreground"]
-```
-
-### 🚀 **Construcción y ejecución del contenedor**
-
-1️⃣ **Construir la imagen Docker:**
-```bash
-docker build -t apache-mod_evasive .
-```
-
-2️⃣ **Ejecutar el contenedor:**
-```bash
-docker run --detach --rm -p 8080:80 --name="secure-apache" apache-mod_evasive
-```
-
-✅ Ahora Apache ejecuta mod_evasive en un entorno **contenedorizado**, protegiendo contra ataques DoS.
 
 ---
 
