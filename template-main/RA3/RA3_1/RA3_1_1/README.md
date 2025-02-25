@@ -76,8 +76,6 @@ Content-Type: text/html
 
 ✅ Ahora, el encabezado `Server` solo muestra `Apache`, sin información adicional.
 
----
-
 ### 🔹 Configurar la cabecera **HSTS**
 HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obliga a los navegadores a usar HTTPS para comunicarse con el servidor.
 
@@ -95,6 +93,8 @@ Luego, agregue la siguiente línea en el archivo de configuración del host virt
 </VirtualHost>
 ```
 ✅ Esto obliga a los navegadores a usar conexiones seguras durante **2 años**.
+
+---
 
 ### 🛡️  Configurar la cabecera **CSP**
 Para mejorar la seguridad contra ataques XSS y evitar la ejecución de scripts no confiables, agregue la siguiente directiva en la configuración de Apache:
