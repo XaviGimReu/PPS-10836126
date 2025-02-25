@@ -102,7 +102,6 @@ SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por
 
 ✅ Esta configuración bloqueará cualquier solicitud que contenga `testparam=test`.
 
----
 
 ### 🔄 Reiniciar Apache para aplicar los cambios
 ```bash
