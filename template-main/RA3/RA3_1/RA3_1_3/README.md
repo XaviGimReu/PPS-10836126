@@ -1,6 +1,6 @@
 # 🐝 Práctica 3: OWASP ModSecurity CRS en Apache
 
-## 📌 Introducción a OWASP ModSecurity CRS
+## 📌 Introducción
 
 El **OWASP ModSecurity Core Rule Set (CRS)** es un conjunto de reglas preconfiguradas que fortalecen la seguridad de las aplicaciones web contra amenazas comunes, como:
 
