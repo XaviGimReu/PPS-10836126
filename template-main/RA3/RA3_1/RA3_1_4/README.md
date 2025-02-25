@@ -92,8 +92,12 @@ apt install -y apache2-utils
 
 2️⃣ Ejecutar la prueba de estrés con `ab`:
 ```bash
-ab -n 1000 -c 50 http://localhost/
+ab -n 1000 -c 50 http://localhost:8080/
 ```
+📸 Ejemplo de la ejecución `ab`:
+
+![ab](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/3.png)
+
 📌 **Explicación de los parámetros:**
 - `-n 1000` → Número total de solicitudes a enviar.
 - `-c 50` → Número de solicitudes concurrentes.
