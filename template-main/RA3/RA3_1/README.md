@@ -33,7 +33,7 @@ Para descargar y utilizar las imagenes con todas las configuraciones aplicadas, 
 - 🔹 **[Práctica 4: Evitar ataques DDoS](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_4)** – 🏆 *Implementación del modulo `evasive` para la mitigación de ataques DoS y fuerza bruta.*
 
 📂 **Certificados:**  
-- 🔹 **[Práctica 5: Certificado digital en Apache](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)** – 🔑 *Generación de certificados digitales para gestionar los controles de acceso y permisos adecuados.*  
+- 🔹 **[Práctica 5: Certificado digital en Apache](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)** – 🔑 *Generación de certificados digitales para gestionar los controles de acceso y permisos.*  
 
 ---
 
