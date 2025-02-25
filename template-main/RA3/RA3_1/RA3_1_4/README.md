@@ -50,7 +50,10 @@ nano /etc/apache2/mods-available/evasive.conf
     DOSPageInterval     1      # Intervalo de tiempo en segundos para contar las solicitudes
     DOSSiteInterval     1
     DOSBlockingPeriod   10     # Tiempo en segundos que una IP permanecerá bloqueada
+
+    DOSEmailNotify      admin@www.midominioseguro.com
     DOSLogDir           "/var/log/mod_evasive"
+    DOSWhitelist        127.0.0.1
 </IfModule>
 ```
 📸 Ejemplo del archivo `evasive.conf`:
