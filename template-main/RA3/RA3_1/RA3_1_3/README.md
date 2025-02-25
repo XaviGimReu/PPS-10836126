@@ -130,41 +130,6 @@ https://localhost:8080/index.html?exec=/../../"
 
 ✅ **Las reglas OWASP CRS han detectado y bloqueado ambos intentos de ataque.**
 
----
-
-## 🐳 **Crear una imagen Docker con OWASP ModSecurity CRS**
-
-Para facilitar la implementación en otros entornos, podemos crear un contenedor Docker con Apache y OWASP CRS preconfigurados.
-
-### 📌 **Dockerfile**
-Cree un archivo `Dockerfile` con el siguiente contenido:
-```dockerfile
-FROM httpd:2.4
-
-# Instalar ModSecurity y OWASP CRS
-RUN apt update && apt install -y libapache2-mod-security2 && \
-    git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git && \
-    mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf && \
-    mv owasp-modsecurity-crs/rules /etc/modsecurity && \
-    echo "Include /etc/modsecurity/rules/*.conf" >> /etc/apache2/mods-enabled/security2.conf
-
-# Exponer los puertos HTTP y HTTPS
-EXPOSE 80 443
-CMD ["httpd-foreground"]
-```
-
-### 🚀 **Construir y ejecutar el contenedor Docker**
-1️⃣ **Construir la imagen Docker:**
-```bash
-docker build -t apache-owasp-waf .
-```
-
-2️⃣ **Ejecutar el contenedor con los puertos adecuados:**
-```bash
-docker run --detach --rm -p 8080:80 -p 8081:443 --name="secure-owasp" apache-owasp-waf
-```
-
-✅ Esto iniciará un servidor Apache con OWASP ModSecurity CRS activado y configurado.
 
 ---
 
