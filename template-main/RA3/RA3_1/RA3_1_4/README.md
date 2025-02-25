@@ -113,7 +113,7 @@ cat /var/log/mod_evasive/dos-172.17.0.1
 
 ![mod_evasive log](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Ataques%20DDos/5.png)
 
-✅ Si en los `logs` del móodulo `evasive` aparece un archivo como `dos-172.17.0.1`, la IP ha sido bloqueada correctamente.
+✅ Si en los `logs` del módulo `evasive` aparece un archivo como `dos-172.17.0.1`, indica que la IP ha sido bloqueada correctamente.
 
 ---
 
