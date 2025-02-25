@@ -67,7 +67,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 
 ---
 
-## 🚀 **Docker**
+## 🚀 **Construcción del contenedor Docker**
 1️⃣ **Construir la imagen Docker:**
 ```bash
 docker build -t hardenowasp .
