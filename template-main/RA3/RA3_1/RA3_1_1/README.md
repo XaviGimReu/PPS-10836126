@@ -19,58 +19,57 @@ sudo a2dismod autoindex
 
 ✅ Esto previene la exposición accidental de archivos y directorios sensibles.
 
-🔹 Ocultar la información del servidor en las cabeceras HTTP
-
+### 🔹 Ocultar la información del servidor en las cabeceras HTTP
 Por defecto, Apache muestra información sobre su versión y sistema operativo en las respuestas HTTP. Esta información puede ser utilizada por atacantes para identificar vulnerabilidades específicas.
 
-🔍 Verificar la información expuesta
-
+#### 🔍 Verificar la información expuesta
 Para comprobar qué información está siendo expuesta por Apache, ejecute:
-
+```bash
 curl --head localhost
-
+```
 Ejemplo de salida antes de la configuración:
-
+```
 HTTP/1.1 200 OK
 Date: Mon, 24 Feb 2025 11:01:49 GMT
 Server: Apache/2.4.58 (Ubuntu)
 Content-Type: text/html
+```
+Aquí, el encabezado `Server` indica la versión específica de Apache y el sistema operativo subyacente.
 
-Aquí, el encabezado Server indica la versión específica de Apache y el sistema operativo subyacente.
-
-✍️ Configurar Apache para ocultar la versión y la firma del servidor
-
+#### ✍️ Configurar Apache para ocultar la versión y la firma del servidor
 Para evitar que esta información sea revelada, modifique el archivo de configuración principal de Apache en:
-
+```bash
 sudo nano /etc/apache2/apache2.conf
-
+```
 Añada o modifique las siguientes líneas:
-
+```apache
 # Eliminación de la información de las cabeceras
 ServerTokens ProductOnly
 ServerSignature Off
+```
+✅ Con `ServerTokens ProductOnly`, Apache solo revelará el producto (`Apache`), sin la versión ni el sistema operativo.
+✅ Con `ServerSignature Off`, se elimina completamente la firma del servidor en las páginas de error y listados de directorios.
 
-✅ Con ServerTokens ProductOnly, Apache solo revelará el producto (Apache), sin la versión ni el sistema operativo.
-✅ Con ServerSignature Off, se elimina completamente la firma del servidor en las páginas de error y listados de directorios.
-
-🔄 Reiniciar Apache para aplicar los cambios
-
+#### 🔄 Reiniciar Apache para aplicar los cambios
+```bash
 sudo systemctl restart apache2
+```
 
-🔍 Verificar que los cambios han sido aplicados
-
+#### 🔍 Verificar que los cambios han sido aplicados
 Ejecute nuevamente:
-
+```bash
 curl --head localhost
-
+```
 Salida esperada después de la configuración:
-
+```
 HTTP/1.1 200 OK
 Date: Mon, 24 Feb 2025 11:23:12 GMT
 Server: Apache
 Content-Type: text/html
+```
+✅ Ahora, el encabezado `Server` solo muestra `Apache`, sin información adicional.
 
-✅ Ahora, el encabezado Server solo muestra Apache, sin información adicional.
+---
 
 ### 🔹 Configurar la cabecera **HSTS**
 HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obliga a los navegadores a usar HTTPS para comunicarse con el servidor.
