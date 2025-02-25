@@ -65,7 +65,7 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ```
 ![DockerFile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/Dockerfile.png)
 
-### 🚀 **Construir y ejecutar el contenedor Docker**
+## 🚀 **Docker**
 1️⃣ **Construir la imagen Docker:**
 ```bash
 docker build -t hardenowasp .
