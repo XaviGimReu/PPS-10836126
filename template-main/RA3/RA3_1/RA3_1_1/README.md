@@ -76,7 +76,9 @@ Content-Type: text/html
 
 ✅ Ahora, el encabezado `Server` solo muestra `Apache`, sin información adicional.
 
-### 🔹 Configurar la cabecera **HSTS**
+---
+
+## 📂 Configurar la cabecera **HSTS**
 HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obliga a los navegadores a usar HTTPS para comunicarse con el servidor.
 
 Para habilitarlo en Apache, primero active el módulo `headers`:
