@@ -98,7 +98,7 @@ SecRule ARGS:testparam "@contains test" "id:1234,deny,status:403,msg:'Cazado por
 📸 **Captura de configuración del VirtualHost:**
 
 
-![VirtualHost](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP%20ModSecurity%20CRS/2.png)
+![VirtualHost](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/2.png)
 
 ✅ Esta configuración bloqueará cualquier solicitud que contenga `testparam=test`.
 
