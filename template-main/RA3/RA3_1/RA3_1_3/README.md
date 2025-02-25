@@ -112,28 +112,6 @@ service apache2 reload
 
 ## 🔍 **Prueba de OWASP ModSecurity CRS en Apache**
 
-### 🔹 Bloqueo de peticiones maliciosas
-
-Para verificar que ModSecurity está funcionando, ejecuta:
-```bash
-curl "http://localhost:8080/index.html?testparam=test"
-```
-
-📌 **Salida esperada:**
-```html
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>403 Forbidden</title>
-</head><body>
-<h1>Forbidden</h1>
-<p>You don't have permission to access this resource.</p>
-</body></html>
-```
-
-📸 **Ejemplo de intento de ataque bloqueado:**
-![403 Forbidden](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP%20ModSecurity%20CRS/3.png)
-
-✅ Esto confirma que la solicitud ha sido **bloqueada por ModSecurity**.
 
 ---
 
