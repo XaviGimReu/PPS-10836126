@@ -111,7 +111,7 @@ Luego, agregue la siguiente línea en el archivo de configuración del host virt
 </VirtualHost>
 ```
 
-📸 **Captura de las cabeceras:**
+📸 **Captura de las cabeceras HSTS:**
 
 
 ![HSTS](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/7.%20HSTS.png)
