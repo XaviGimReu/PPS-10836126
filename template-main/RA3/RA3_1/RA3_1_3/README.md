@@ -116,10 +116,10 @@ service apache2 reload
 
 **1️⃣ Intento de ejecución remota de comandos:**
 ```bash
-curl "http://localhost:8080/index.html?exec=/bin/bash"
+https://localhost:8080/index.html?exec=/bin/bash
 ```
 📸 **Ejemplo de ataque bloqueado:**
-![Command Injection](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP%20ModSecurity%20CRS/4.png)
+![Command Injection](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/3.png)
 
 **2️⃣ Intento de path traversal:**
 ```bash
