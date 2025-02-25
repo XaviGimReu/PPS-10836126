@@ -15,6 +15,8 @@ Este módulo permite la generación automática de listados de directorios en ca
 ```bash
 sudo a2dismod autoindex
 ```
+![autoindex](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/3.%20deshabilitar_autoindex.png)
+
 ✅ Esto previene la exposición accidental de archivos y directorios sensibles.
 
 ### 🔹 Configurar la cabecera **HSTS**
