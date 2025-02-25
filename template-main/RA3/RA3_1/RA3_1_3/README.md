@@ -69,13 +69,12 @@ Añadir la siguiente configuración para cargar las reglas de OWASP CRS:
 </IfModule>
 ```
 
-📌 **Nota:** Esta configuración permite que ModSecurity aplique las reglas OWASP CRS en todas las solicitudes HTTP que reciba Apache.
-
 📸 **Captura de configuración de security2.conf:**
 
 
 ![security2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/1.png)
 
+📌 **Nota:** Esta configuración permite que ModSecurity aplique las reglas OWASP CRS en todas las solicitudes HTTP que reciba Apache.
 ---
 
 ### 🔹 Configuración de reglas personalizadas en el Host Virtual
