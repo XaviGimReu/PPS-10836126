@@ -30,7 +30,7 @@ git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git
 
 3️⃣ Mover el archivo de configuración base:
 ```bash
-sudo mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf
+mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf
 ```
 
 4️⃣ Mover las reglas al directorio de configuración de ModSecurity:
@@ -39,9 +39,9 @@ sudo mv owasp-modsecurity-crs/rules/ /etc/modsecurity
 ```
 Si encuentras algún error, crea la carpeta y copia las reglas manualmente:
 ```bash
-sudo mkdir /etc/modsecurity/rules
+mkdir /etc/modsecurity/rules
 cd owasp-modsecurity-crs/rules
-sudo cp *.* /etc/modsecurity/rules
+cp *.* /etc/modsecurity/rules
 ```
 
 ✅ Ahora las reglas OWASP están instaladas en nuestro servidor.
@@ -52,7 +52,7 @@ sudo cp *.* /etc/modsecurity/rules
 
 1️⃣ Editar la configuración de ModSecurity en Apache:
 ```bash
-sudo nano /etc/apache2/mods-enabled/security2.conf
+nano /etc/apache2/mods-enabled/security2.conf
 ```
 Añadir la siguiente configuración para cargar las reglas de OWASP CRS:
 ```apache
@@ -72,7 +72,7 @@ Añadir la siguiente configuración para cargar las reglas de OWASP CRS:
 📌 **Nota:** Esta configuración permite que ModSecurity aplique las reglas OWASP CRS en todas las solicitudes HTTP que reciba Apache.
 
 📸 **Captura de configuración de security2.conf:**
-![security2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP%20ModSecurity%20CRS/1.png)
+![security2.conf](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/OWASP/1.png)
 
 ---
 
