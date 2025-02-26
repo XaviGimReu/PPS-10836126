@@ -35,7 +35,7 @@ mv owasp-modsecurity-crs/crs-setup.conf.example /etc/modsecurity/crs-setup.conf
 
 4️⃣ Mover las reglas al directorio de configuración de ModSecurity:
 ```bash
-sudo mv owasp-modsecurity-crs/rules/ /etc/modsecurity
+mv owasp-modsecurity-crs/rules/ /etc/modsecurity
 ```
 Si encuentras algún error, crea la carpeta y copia las reglas manualmente:
 ```bash
