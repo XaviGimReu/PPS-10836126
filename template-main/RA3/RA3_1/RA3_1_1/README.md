@@ -100,7 +100,7 @@ HSTS **(HTTP Strict Transport Security)** es una política de seguridad que obli
 Para habilitarlo en Apache, primero active el módulo `headers`:
 ```bash
 a2enmod headers
-service reload apache2
+service apache2 reload
 ```
 Luego, agregue la siguiente línea en el archivo de configuración del host virtual:
 ```apache
