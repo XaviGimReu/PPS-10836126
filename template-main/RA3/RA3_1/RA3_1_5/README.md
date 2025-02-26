@@ -108,9 +108,9 @@ Buscamos y modificamos las siguientes líneas:
 
 ---
 
-### 4️⃣ Configurar `/etc/hosts` para Resolución Local
+### 4️⃣ Configurar `/etc/hosts` para resolución local
 
-Para poder acceder al dominio local con el certificado SSL, agregamos el siguiente registro en `/etc/hosts`:
+Para poder acceder al dominio local con el certificado SSL, agregamos el siguiente registro en `/etc/hosts` de la máquina anfitrión:
 
 ```bash
 nano /etc/hosts
