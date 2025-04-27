@@ -23,18 +23,25 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 ### 📂 DVWA Vulnerabilities Exploration
 
 - 🔹 **SQL Injection** – 🛠️ *Detección y explotación de vulnerabilidades de inyección de SQL para manipular bases de datos.*
+  
 - 🔹 **Cross-Site Scripting (XSS)** – 🔒 *Ejecución de scripts maliciosos en navegadores de usuarios vulnerables.*
+  
 - 🔹 **Cross Site Request Forgery (CSRF)** – 🛡️ *Falsificación de peticiones realizadas por usuarios autenticados.*
+  
 - 🔹 **Weak Session IDs** – 🏆 *Explotación de identificadores de sesión débiles o predecibles.*
+  
 - 🔹 **Brute Force** – 🔑 *Ataques de fuerza bruta para la obtención de credenciales de acceso.*
+  
 - 🔹 **Content Security Policy (CSP) Bypass** – 🎯 *Evasión de políticas de seguridad mal configuradas.*
+  
 - 🔹 **Command Injection** – ⚡ *Ejecución de comandos arbitrarios en el servidor a través de formularios vulnerables.*
 
 ---
 
 ## ⚙️ Entorno de Pruebas
 
-Para garantizar un entorno seguro y controlado, todas las pruebas se realizan utilizando DVWA en un laboratorio aislado.  
+Para garantizar un entorno seguro y controlado, todas las pruebas se realizan utilizando DVWA en un laboratorio aislado.
+
 Se recomienda utilizar entornos virtualizados como **Docker**, **VirtualBox** o **GNS3** para replicar de forma segura los ejercicios.
 
 ---
