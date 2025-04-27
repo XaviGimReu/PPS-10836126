@@ -22,7 +22,7 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 
 ### 📂 DVWA Vulnerabilities Exploration
 
-- 🔹 **SQL Injection** – 🛠️ *Detección y explotación de vulnerabilidades de inyección de SQL para manipular bases de datos.*
+- 🔹 **[SQL Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)** – 🛠️ *Detección y explotación de vulnerabilidades de inyección de SQL para manipular bases de datos.* &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
   
 - 🔹 **Cross-Site Scripting (XSS)** – 🔒 *Ejecución de scripts maliciosos en navegadores de usuarios vulnerables.*
   
@@ -48,7 +48,9 @@ Se recomienda utilizar entornos virtualizados como **Docker**, **VirtualBox** o 
 
 ## 📚 Recursos de Interés
 
-- [Documentación Oficial de DVWA](https://github.com/digininja/DVWA)
-- [OWASP Top Ten Vulnerabilidades Web](https://owasp.org/www-project-top-ten/)
+**[RA3_1_2(WAF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_2)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[RA3_1_3(OWASP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_3)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[RA3_1_4(Ataques DDoS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_4)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[RA3_1_5(Certificado digital)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_1/RA3_1_5)**
 
 ---
