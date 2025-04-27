@@ -12,8 +12,11 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 ## 🎯 Objetivos del Proyecto
 
 - Comprender y explotar diferentes tipos de vulnerabilidades web de forma controlada.
+  
 - Analizar el impacto de cada vulnerabilidad sobre la seguridad de una aplicación.
+
 - Aprender a implementar medidas de mitigación y endurecimiento (hardening) de aplicaciones web.
+  
 - Mejorar habilidades prácticas en *penetration testing* y respuesta ante incidentes.
 
 ---
@@ -49,6 +52,7 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 ## 📚 Recursos de Interés
 
 - **[DVWA](https://aftabsama.com/writeups/dvwa/)** – *Instrucciones DVWA.*
+  
 - **[DVWA (GitHub)](https://github.com/digininja/DVWA)** – *GitHub DVWA.*
 
 ---
