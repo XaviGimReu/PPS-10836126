@@ -40,9 +40,9 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 
 ## ⚙️ Entorno de Pruebas
 
-Para garantizar un entorno seguro y controlado, todas las pruebas se realizan utilizando DVWA en un laboratorio aislado.
+- Para garantizar un entorno seguro y controlado, todas las pruebas se realizan utilizando DVWA en un laboratorio aislado.
 
-Se recomienda utilizar entornos virtualizados como **Docker**, **VirtualBox** o **GNS3** para replicar de forma segura los ejercicios.
+- Se recomienda utilizar entornos virtualizados como **Docker**, **VirtualBox** o **GNS3** para replicar de forma segura los ejercicios.
 
 ---
 
