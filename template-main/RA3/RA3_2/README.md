@@ -48,7 +48,7 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 
 ## 📚 Recursos de Interés
 
-- *Instrucciones DVWA -->* **[DVWA](https://aftabsama.com/writeups/dvwa/)**
-- *GitHub DVWA -->***[DVWA (GitHub)](https://github.com/digininja/DVWA)**
+- **[DVWA](https://aftabsama.com/writeups/dvwa/)** – *Instrucciones DVWA.*
+- **[DVWA (GitHub)](https://github.com/digininja/DVWA)** – *GitHub DVWA.*
 
 ---
