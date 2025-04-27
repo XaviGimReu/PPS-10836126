@@ -29,3 +29,16 @@ Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
 
 ```text
 '
+```
+
+### 2. Explotación básica - Listado de todos los usuarios
+
+Se utiliza el siguiente payload para forzar la recuperación de todos los registros:
+
+```text
+' or 1=1#
+```
+
+📸 **Captura del listado de usuarios:**
+
+![usuarios](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_1/assets/CSP/3.%20deshabilitar_autoindex.png)
