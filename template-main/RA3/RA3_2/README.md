@@ -24,17 +24,17 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 
 - 🔹 **[SQL Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/SQL%20Injection)** – 🛠️ *Detección y explotación de vulnerabilidades de inyección de SQL para manipular bases de datos.* &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
   
-- 🔹 **Cross-Site Scripting (XSS)** – 🔒 *Ejecución de scripts maliciosos en navegadores de usuarios vulnerables.*
+- 🔹 **[Cross-Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🔒 *Ejecución de scripts maliciosos en navegadores de usuarios vulnerables.*
   
-- 🔹 **Cross Site Request Forgery (CSRF)** – 🛡️ *Falsificación de peticiones realizadas por usuarios autenticados.*
+- 🔹 **[Cross Site Request Forgery (CSRF)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🛡️ *Falsificación de peticiones realizadas por usuarios autenticados.*
   
-- 🔹 **Weak Session IDs** – 🏆 *Explotación de identificadores de sesión débiles o predecibles.*
+- 🔹 **[Weak Session IDs](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🏆 *Explotación de identificadores de sesión débiles o predecibles.*
   
-- 🔹 **Brute Force** – 🔑 *Ataques de fuerza bruta para la obtención de credenciales de acceso.*
+- 🔹 **[Brute Force](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🔑 *Ataques de fuerza bruta para la obtención de credenciales de acceso.*
   
-- 🔹 **Content Security Policy (CSP) Bypass** – 🎯 *Evasión de políticas de seguridad mal configuradas.*
+- 🔹 **[Content Security Policy (CSP)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🎯 *Evasión de políticas de seguridad mal configuradas.*
   
-- 🔹 **Command Injection** – ⚡ *Ejecución de comandos arbitrarios en el servidor a través de formularios vulnerables.*
+- 🔹 **[Comand Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – ⚡ *Ejecución de comandos arbitrarios en el servidor a través de formularios vulnerables.*
 
 ---
 
