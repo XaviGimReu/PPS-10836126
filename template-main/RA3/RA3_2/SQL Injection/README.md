@@ -18,7 +18,7 @@ Durante esta práctica se explorarán las diferentes posibilidades de explotaci�
 En el nivel **Low**, no existen medidas de protección.  
 Cualquier entrada proporcionada por el usuario es directamente insertada en la consulta SQL, permitiendo fácilmente detectar y explotar la vulnerabilidad.
 
----
+
 
 ## 🛠️ Procedimiento
 
