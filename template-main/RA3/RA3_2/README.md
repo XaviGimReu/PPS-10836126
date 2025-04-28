@@ -24,7 +24,7 @@ Esta práctica busca no solo comprender cómo se producen los fallos de segurida
 
 ### 📂 DVWA Vulnerabilities Exploration
 
-- 🔹 **[SQL Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/SQL%20Injection)** – 🛠️ *Detección y explotación de vulnerabilidades de inyección de SQL para manipular bases de datos.* 
+- 🔹 **[SQL Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/SQL%20Injection)** – 🛠️ *Detección y explotación de vulnerabilidades de inyección SQL para manipular bases de datos.* 
   
 - 🔹 **[Cross-Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS))** – 🔒 *Ejecución de scripts maliciosos en navegadores de usuarios vulnerables.*
   
