@@ -25,7 +25,7 @@ En el nivel **Low**, no existen medidas de protección, cualquier entrada propor
 Se introduce un apóstrofe `'` en el campo **User ID**.  
 Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
 
-```text
+```sql
 '
 ```
 
@@ -33,7 +33,7 @@ Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
 
 Se utiliza el siguiente payload para forzar la recuperación de todos los registros:
 
-```text
+```sql
 ' or 1=1#
 ```
 
@@ -50,7 +50,7 @@ Se utiliza el siguiente payload para forzar la recuperación de todos los regist
 
 Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y contraseñas:
 
-```text
+```sql
 ' UNION SELECT user, password FROM users#
 ```
 
