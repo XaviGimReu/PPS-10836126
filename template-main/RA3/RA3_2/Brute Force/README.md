@@ -104,7 +104,6 @@ Durante la ejecución del ataque, se observó que:
   
 Debido al tiempo excesivo requerido, se decidió **no completar el ataque** para no comprometer los recursos del entorno de prácticas.
 
----
 
 ## 📋 Resumen
 
@@ -112,7 +111,6 @@ Debido al tiempo excesivo requerido, se decidió **no completar el ataque** para
 
 - El entorno Medium de DVWA demuestra ser efectivo en la mitigación de ataques automatizados simples.
 
----
 
 ## 🛡️ Medidas de Mitigación (recomendadas adicionales)
 
