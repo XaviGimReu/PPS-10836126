@@ -10,7 +10,7 @@ Durante esta práctica se explorarán las diferentes posibilidades de explotaci�
 
 ---
 
-# 🔹 Nivel de Seguridad: Low
+# 🔷​ Nivel de Seguridad: Low
 
 ## 📌 Descripción
 
@@ -72,6 +72,22 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
   
 - Emplear ORM seguros
 
+---
+
+# 🔶​ Nivel de Seguridad: Medium
+
+## 📌 Descripción
+
+En el nivel **Low**, no existen medidas de protección, cualquier entrada proporcionada por el usuario es directamente insertada en la consulta SQL, permitiendo fácilmente detectar y explotar la vulnerabilidad.
+
+
+
+## 🛠️ Procedimiento
+
+### 1. Detección de SQL Injection
+
+Se introduce un apóstrofe `'` en el campo **User ID**.  
+Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
 
 
 ---
