@@ -2,8 +2,7 @@
 
 ## 📖 Introducción
 
-**Damn Vulnerable Web Application (DVWA)** es una aplicación web deliberadamente vulnerable, creada con el objetivo de permitir la práctica segura de técnicas de ciberseguridad.  
-Ofrece un entorno controlado donde profesionales de la seguridad, estudiantes e investigadores pueden **detectar, explotar y aprender a mitigar vulnerabilidades comunes en aplicaciones web**.
+**Damn Vulnerable Web Application (DVWA)** es una aplicación web deliberadamente vulnerable, creada con el objetivo de permitir la práctica segura de técnicas de ciberseguridad. Ofrece un entorno controlado donde profesionales de la seguridad, estudiantes e investigadores pueden **detectar, explotar y aprender a mitigar vulnerabilidades comunes en aplicaciones web**.
 
 Esta práctica busca no solo comprender cómo se producen los fallos de seguridad, sino también desarrollar competencias en su prevención, siguiendo principios de hacking ético y buenas prácticas de programación segura.
 
