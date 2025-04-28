@@ -135,7 +135,7 @@ Se guarda la modificación y se envía el formulario.
 ---
 
 # 💠 Nivel de Seguridad: High
-​
+
 ## 📌 Descripción
 
 En el nivel **High**, DVWA refuerza la seguridad para dificultar los ataques de inyección SQL:
