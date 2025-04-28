@@ -4,14 +4,13 @@
 
 # 📖 Introducción
 
-**Command Injection (Inyección de Comandos)** es una vulnerabilidad que ocurre cuando una aplicación permite la ejecución de comandos del sistema operativo con entrada controlada por el usuario.  
-Un atacante puede aprovechar esta vulnerabilidad para ejecutar comandos arbitrarios en el servidor, comprometiendo gravemente la seguridad del sistema.
+**Command Injection (Inyección de Comandos)** es una vulnerabilidad que ocurre cuando una aplicación permite la ejecución de comandos del sistema operativo con entrada controlada por el usuario. Un atacante puede aprovechar esta vulnerabilidad para ejecutar comandos arbitrarios en el servidor, comprometiendo gravemente la seguridad del sistema.
 
 Durante esta práctica se explorará la explotación de esta vulnerabilidad en los niveles de seguridad **Low**, **Medium** y **High** en DVWA.
 
 ---
 
-# 🔷 Nivel de Seguridad: Low
+# 🔷🔶💠 Nivel de Seguridad: Low, Medium y High
 
 ## 📌 Descripción
 
