@@ -56,25 +56,6 @@ Donde:
 
 ---
 
-
-
-### 3. Explotación avanzada - Obtención de usuarios y contraseñas
-
-Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y contraseñas:
-
-```sql
-' UNION SELECT user, password FROM users#
-```
-
-📸 **Captura de la extracción de usuarios y contraseñas:**
-
-
-![extración_usuarios&contraseñas](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20low_1.png)
-
-✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
-
----
-
 ## 📋 Resumen
 
 - La ausencia de limitaciones de intentos permite un ataque exitoso de fuerza bruta.
@@ -92,6 +73,58 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 - Homogeneizar las respuestas del servidor (misma respuesta para éxito o fallo).
 
 - Emplear mecanismos de protección de acceso como autenticación multifactor (MFA).
+
+---
+
+# 🔶 Nivel de Seguridad: Medium
+
+## 📌 Descripción
+
+En el nivel **Medium**, DVWA introduce algunas medidas básicas de protección contra ataques de fuerza bruta:
+
+- Incremento del tiempo de respuesta del servidor tras intentos fallidos.
+- Posibles cambios en la estructura del formulario para dificultar la automatización.
+
+Estas medidas tienen como objetivo aumentar el tiempo requerido para completar un ataque de fuerza bruta, haciéndolo inviable en la práctica.
+
+
+## 🛠️ Procedimiento
+
+### 1. Configuración del ataque
+
+Se intentó realizar un ataque de fuerza bruta utilizando **Hydra** con los mismos parámetros utilizados en el nivel **Low**.
+
+
+### 2. Resultado de la ejecución
+
+Durante la ejecución del ataque, se observó que:
+
+- El tiempo estimado para completar el ataque era superior a **52 horas**.
+- El servidor ralentiza deliberadamente las respuestas después de múltiples intentos fallidos.
+  
+Debido al tiempo excesivo requerido, se decidió **no completar el ataque** para no comprometer los recursos del entorno de prácticas.
+
+---
+
+## 📋 Resumen
+
+- La ralentización progresiva de las respuestas del servidor impide la ejecución práctica del ataque de fuerza bruta.
+
+- El entorno Medium de DVWA demuestra ser efectivo en la mitigación de ataques automatizados simples.
+
+---
+
+## 🛡️ Medidas de Mitigación (recomendadas adicionales)
+
+- Implementar bloqueos de IP tras varios intentos fallidos.
+  
+- Utilizar autenticación multifactor (MFA).
+  
+- Limitar las tasas de intentos por cuenta o IP (Rate Limiting).
+
+---
+
+
 
 ---
 
