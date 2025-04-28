@@ -44,7 +44,7 @@ Se utiliza el siguiente payload para forzar la recuperación de todos los regist
 
 ✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
 
-
+---
 
 ### 3. Explotación avanzada - Obtención de usuarios y contraseñas
 
@@ -61,6 +61,7 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 
 ✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
 
+---
 
 ## 🛡️ Medidas de Mitigación
 
