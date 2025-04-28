@@ -116,6 +116,95 @@ Se guarda la modificación y se envía el formulario.
 
 ✅ Esto permite ejecutar una inyección SQL exitosa en el nivel Medium, obteniendo usuarios y contraseñas de la base de datos.
 
+---
+
+## 📋 Resumen
+
+- Aunque DVWA Medium implementa controles en la interfaz gráfica, no valida los datos en el servidor.
+
+- Manipulando el HTML enviado, es posible realizar una inyección SQL exitosa.
+
+
+## 🛡️ Medidas de Mitigación
+
+- Validar los datos recibidos del lado del servidor, no confiar en la validación del cliente.
+
+- Usar consultas parametrizadas siempre que se construya una consulta SQL a partir de entrada de usuario.
+
+- Aplicar políticas de seguridad adicionales, como limitaciones estrictas de entrada
+
+---
+
+# 💠 Nivel de Seguridad: High
+​
+## 📌 Descripción
+
+En el nivel **High**, DVWA refuerza la seguridad para dificultar los ataques de inyección SQL:
+
+
+- Los valores disponibles en el formulario son controlados y no se pueden modificar directamente.
+  
+- El sistema intenta validar y filtrar la entrada del usuario.
+  
+
+Sin embargo, aprovechando puntos alternativos de entrada (como la modificación de **Session ID**) es posible **bypassear las defensas**.
+
+
+## 🛠️ Procedimiento
+
+### 1. Identificación del cambio de Session ID
+
+En el formulario aparece un enlace:
+
+```text
+Click here to change your ID.
+```
+
+Al hacer clic, se abre una ventana secundaria que permite cambiar manualmente el **Session ID**.
+
+📸 **Captura de la opción de cambio de Session ID:**
+
+
+![session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
+
+📝 **Nota:** El campo de Session ID manual no cuenta con las mismas protecciones estrictas que el campo de User ID principal, permitiendo entrada libre.
+
+---
+
+### 2. Inyección a través de Session ID
+
+En el campo de **Session ID**, se introduce el payload:
+
+```sql
+' UNION SELECT user, password FROM users#
+```
+
+Luego se pulsa `Submit`.
+
+📸 **Captura del payload insertado en Session ID:**
+
+
+![payload_session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
+
+✅ Esto permite ejecutar una inyección SQL exitosa incluso en el nivel High, obteniendo usuarios y contraseñas.
+
+---
+
+## 📋 Resumen
+
+- Aunque DVWA protege el campo de User ID en el formulario principal, no protege correctamente otros puntos de entrada (como la edición de Session ID).
+
+- Es posible explotar la vulnerabilidad utilizando vectores alternativos de ataque.
+
+
+## 🛡️ Medidas de Mitigación
+
+- Validar **todas** las entradas de usuario, no solo las principales.
+
+- Aplicar **consultas parametrizadas** en todas las consultas SQL que reciban datos de entrada externa.
+
+- Minimizar el número de puntos donde el usuario puede modificar directamente parámetros sensibles.
+
 
 ---
 
