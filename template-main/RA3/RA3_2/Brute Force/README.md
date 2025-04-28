@@ -54,7 +54,6 @@ Donde:
 
 ✅ Esto demuestra que se pueden encontrar múltiples contraseñas válidas sin ninguna restricción, validando que el sistema es vulnerable a fuerza bruta.
 
----
 
 ## 📋 Resumen
 
