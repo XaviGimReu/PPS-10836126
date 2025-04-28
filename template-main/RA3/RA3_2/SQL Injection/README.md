@@ -78,16 +78,31 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 
 ## 📌 Descripción
 
-En el nivel **Low**, no existen medidas de protección, cualquier entrada proporcionada por el usuario es directamente insertada en la consulta SQL, permitiendo fácilmente detectar y explotar la vulnerabilidad.
-
+En el nivel **Medium**, DVWA introduce filtros que impiden inyecciones básicas introduciendo datos maliciosos directamente en el formulario.  
+Sin embargo, **manipulando el código fuente de la página web**, todavía es posible explotar la vulnerabilidad.
 
 
 ## 🛠️ Procedimiento
 
-### 1. Detección de SQL Injection
+### 1. Análisis del formulario
 
-Se introduce un apóstrofe `'` en el campo **User ID**.  
-Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
+Se observa que el campo **User ID** es un menú desplegable `<select>`, lo que limita las opciones que el usuario puede enviar desde la interfaz normal.
+
+📸 **Captura: Análisis del formulario en el navegador:**
+
+
+![analisis_formulario](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_1.png)
+
+📝 **Nota:** Aunque el usuario solo puede seleccionar opciones predefinidas, es posible modificar el valor enviado manipulando el HTML mediante las herramientas del navegador.
+
+---
+
+### 2. Manipulación de la opción seleccionada
+
+Utilizando el **Inspector de Elementos** del navegador, se edita el valor del `<option>` para inyectar una carga SQL maliciosa:
+
+```sql
+1 or 1=1 UNION SELECT user, password FROM users#
 
 
 ---
