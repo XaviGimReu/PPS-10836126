@@ -161,11 +161,6 @@ Click here to change your ID.
 
 Al hacer clic, se abre una ventana secundaria que permite cambiar manualmente el **Session ID**.
 
-📸 **Captura de la opción de cambio de Session ID:**
-
-
-![session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
-
 📝 **Nota:** El campo de Session ID manual no cuenta con las mismas protecciones estrictas que el campo de User ID principal, permitiendo entrada libre.
 
 ---
@@ -183,7 +178,7 @@ Luego se pulsa `Submit`.
 📸 **Captura del payload insertado en Session ID:**
 
 
-![payload_session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
+![payload_session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20high_1.png)
 
 ✅ Esto permite ejecutar una inyección SQL exitosa incluso en el nivel High, obteniendo usuarios y contraseñas.
 
