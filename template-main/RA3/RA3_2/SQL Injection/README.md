@@ -39,7 +39,38 @@ Se utiliza el siguiente payload para forzar la recuperación de todos los regist
 
 📸 **Captura del listado de usuarios:**
 
-![usuarios](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20low_1.png)
+
+![listado_usuarios](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20low_1.png)
+
+✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
+
+
+### 3. Explotación avanzada - Obtención de usuarios y contraseñas
+
+Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y contraseñas:
+
+```text
+' UNION SELECT user, password FROM users#
+```
+
+📸 **Captura de la extracción de usuarios y contraseñas:**
+
+
+![extración_usuarios&contraseñas](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20low_1.png)
+
+✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
+
+
+## 🛡️ Medidas de Mitigación
+
+- Utilizar consultas preparadas (prepared statements).
+  
+- Escapar adecuadamente las entradas de usuario.
+  
+- Limitar los permisos de las cuentas de base de datos utilizadas por la aplicación.
+  
+- Emplear ORM seguros
+
 
 
 ---
