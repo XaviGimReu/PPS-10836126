@@ -116,7 +116,6 @@ Se guarda la modificación y se envía el formulario.
 
 ✅ Esto permite ejecutar una inyección SQL exitosa en el nivel Medium, obteniendo usuarios y contraseñas de la base de datos.
 
----
 
 ## 📋 Resumen
 
