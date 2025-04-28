@@ -61,7 +61,6 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 
 ✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
 
----
 
 ## 🛡️ Medidas de Mitigación
 
