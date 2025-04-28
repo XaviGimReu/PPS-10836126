@@ -78,7 +78,8 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 
 ## 📌 Descripción
 
-En el nivel **Medium**, DVWA introduce filtros que impiden inyecciones básicas introduciendo datos maliciosos directamente en el formulario.  
+En el nivel **Medium**, DVWA introduce filtros que impiden inyecciones básicas introduciendo datos maliciosos directamente en el formulario.
+
 Sin embargo, **manipulando el código fuente de la página web**, todavía es posible explotar la vulnerabilidad.
 
 
@@ -88,7 +89,7 @@ Sin embargo, **manipulando el código fuente de la página web**, todavía es po
 
 Se observa que el campo **User ID** es un menú desplegable `<select>`, lo que limita las opciones que el usuario puede enviar desde la interfaz normal.
 
-📸 **Captura: Análisis del formulario en el navegador:**
+📸 **Captura del análisis del formulario en el navegador:**
 
 
 ![analisis_formulario](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_1.png)
@@ -103,6 +104,16 @@ Utilizando el **Inspector de Elementos** del navegador, se edita el valor del `<
 
 ```sql
 1 or 1=1 UNION SELECT user, password FROM users#
+```
+
+Se guarda la modificación y se envía el formulario.
+
+📸 **Captura de la modificación de la opción y envío del payload:**
+
+
+![payload](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
+
+✅ Esto permite ejecutar una inyección SQL exitosa en el nivel Medium, obteniendo usuarios y contraseñas de la base de datos.
 
 
 ---
