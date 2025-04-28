@@ -1,50 +1,61 @@
-# 🛡️ Práctica: SQL Injection en DVWA
+# 🛡️ Práctica: Brute Force en DVWA
 
 ---
 
 # 📖 Introducción
 
-**SQL Injection (Inyección de SQL)** es una vulnerabilidad que permite a los atacantes interferir en las consultas que una aplicación realiza a su base de datos. Un ataque exitoso puede permitir acceso no autorizado a datos sensibles, modificación de información o incluso control total del servidor.
+**Brute Force (Fuerza Bruta)** es una técnica de ataque que consiste en probar sistemáticamente múltiples combinaciones de nombres de usuario y contraseñas hasta encontrar las credenciales correctas. Es uno de los métodos más básicos pero efectivos para vulnerar sistemas con mecanismos de autenticación débiles o mal configurados.
 
-Durante esta práctica se explorarán las diferentes posibilidades de explotación en los niveles de seguridad **Low**, **Medium** y **High** en DVWA.
+Durante esta práctica se explorará cómo llevar a cabo un ataque de fuerza bruta utilizando la herramienta **Hydra** contra la sección de autenticación vulnerable de DVWA.
 
 ---
 
-# 🔷​ Nivel de Seguridad: Low
+# 🔷 Nivel de Seguridad: Low
 
 ## 📌 Descripción
 
-En el nivel **Low**, no existen medidas de protección, cualquier entrada proporcionada por el usuario es directamente insertada en la consulta SQL, permitiendo fácilmente detectar y explotar la vulnerabilidad.
+En el nivel **Low**, el formulario de autenticación no implementa ningún tipo de defensa contra ataques de fuerza bruta:
 
+- No existe limitación de intentos.
+  
+- No se utilizan mecanismos como CAPTCHAs o bloqueos de cuenta.
+  
+- La respuesta del servidor diferencia entre credenciales correctas e incorrectas.
+
+Esto facilita enormemente la ejecución de ataques automatizados.
 
 
 ## 🛠️ Procedimiento
 
-### 1. Detección de SQL Injection
+### 1. Configuración del ataque
 
-Se introduce un apóstrofe `'` en el campo **User ID**.  
-Al enviar el formulario, se genera un error SQL que revela la vulnerabilidad.
+Utilizamos **Hydra** para realizar el ataque de fuerza bruta.  
+Se configura el ataque de la siguiente manera:
 
-```sql
-'
+```bash
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 127.0.0.1 http-get-form "/DVWA/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:Username and/or password incorrect." -m "Cookie: security=low; PHPSESSID=XXXXXXXXXXXX"
 ```
 
-### 2. Explotación básica - Listado de todos los usuarios
+Donde:
 
-Se utiliza el siguiente payload para forzar la recuperación de todos los registros:
+- `-l admin`: login objetivo (admin).
 
-```sql
-' or 1=1#
-```
+- `-P /usr/share/wordlists/rockyou.txt`: diccionario de contraseñas.
 
-📸 **Captura del listado de usuarios:**
+- `http-get-form`: tipo de petición.
+
+- `PHPSESSID`: ID de sesión activa en DVWA.
+
+📸 **Captura de ejecución del ataque con Hydra:**
 
 
-![listado_usuarios](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20low_1.png)
+![hydra](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Brute_Force%20-%20low_1.png)
 
-✅ Esto confirma que el servidor es vulnerable a inyección de SQL al no validar la entrada del usuario.
+✅ Esto demuestra que se pueden encontrar múltiples contraseñas válidas sin ninguna restricción, validando que el sistema es vulnerable a fuerza bruta.
 
 ---
+
+
 
 ### 3. Explotación avanzada - Obtención de usuarios y contraseñas
 
@@ -63,142 +74,23 @@ Con un ataque de **UNION SELECT**, se extraen datos sensibles como usuarios y co
 
 ---
 
-## 🛡️ Medidas de Mitigación
-
-- Utilizar consultas preparadas (prepared statements).
-  
-- Escapar adecuadamente las entradas de usuario.
-  
-- Limitar los permisos de las cuentas de base de datos utilizadas por la aplicación.
-  
-- Emplear ORM seguros
-
----
-
-# 🔶​ Nivel de Seguridad: Medium
-
-## 📌 Descripción
-
-En el nivel **Medium**, DVWA introduce filtros que impiden inyecciones básicas introduciendo datos maliciosos directamente en el formulario.
-
-Sin embargo, **manipulando el código fuente de la página web**, todavía es posible explotar la vulnerabilidad.
-
-
-## 🛠️ Procedimiento
-
-### 1. Análisis del formulario
-
-Se observa que el campo **User ID** es un menú desplegable `<select>`, lo que limita las opciones que el usuario puede enviar desde la interfaz normal.
-
-📸 **Captura del análisis del formulario en el navegador:**
-
-
-![analisis_formulario](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_1.png)
-
-📝 **Nota:** Aunque el usuario solo puede seleccionar opciones predefinidas, es posible modificar el valor enviado manipulando el HTML mediante las herramientas del navegador.
-
----
-
-### 2. Manipulación de la opción seleccionada
-
-Utilizando el **Inspector de Elementos** del navegador, se edita el valor del `<option>` para inyectar una carga SQL maliciosa:
-
-```sql
-1 or 1=1 UNION SELECT user, password FROM users#
-```
-
-Se guarda la modificación y se envía el formulario.
-
-📸 **Captura de la modificación de la opción y envío del payload:**
-
-
-![payload](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20med_2.png)
-
-✅ Esto permite ejecutar una inyección SQL exitosa en el nivel Medium, obteniendo usuarios y contraseñas de la base de datos.
-
-
 ## 📋 Resumen
 
-- Aunque DVWA Medium implementa controles en la interfaz gráfica, no valida los datos en el servidor.
+- La ausencia de limitaciones de intentos permite un ataque exitoso de fuerza bruta.
 
-- Manipulando el HTML enviado, es posible realizar una inyección SQL exitosa.
+- Hydra encuentra varias combinaciones válidas de contraseñas en poco tiempo.
 
-
-## 🛡️ Medidas de Mitigación
-
-- Validar los datos recibidos del lado del servidor, no confiar en la validación del cliente.
-
-- Usar consultas parametrizadas siempre que se construya una consulta SQL a partir de entrada de usuario.
-
-- Aplicar políticas de seguridad adicionales, como limitaciones estrictas de entrada
-
----
-
-# 💠 Nivel de Seguridad: High
-
-## 📌 Descripción
-
-En el nivel **High**, DVWA refuerza la seguridad para dificultar los ataques de inyección SQL:
-
-
-- Los valores disponibles en el formulario son controlados y no se pueden modificar directamente.
-  
-- El sistema intenta validar y filtrar la entrada del usuario.
-  
-
-Sin embargo, aprovechando puntos alternativos de entrada (como la modificación de **Session ID**) es posible **bypassear las defensas**.
-
-
-## 🛠️ Procedimiento
-
-### 1. Identificación del cambio de Session ID
-
-En el formulario aparece un enlace:
-
-```text
-Click here to change your ID.
-```
-
-Al hacer clic, se abre una ventana secundaria que permite cambiar manualmente el **Session ID**.
-
-📝 **Nota:** El campo de Session ID manual no cuenta con las mismas protecciones estrictas que el campo de User ID principal, permitiendo entrada libre.
-
----
-
-### 2. Inyección a través de Session ID
-
-En el campo de **Session ID**, se introduce el payload:
-
-```sql
-' UNION SELECT user, password FROM users#
-```
-
-Luego se pulsa `Submit`.
-
-📸 **Captura del payload insertado en Session ID:**
-
-
-![payload_session_ID](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/SQL_Injection%20-%20high_1.png)
-
-✅ Esto permite ejecutar una inyección SQL exitosa incluso en el nivel High, obteniendo usuarios y contraseñas.
-
----
-
-## 📋 Resumen
-
-- Aunque DVWA protege el campo de User ID en el formulario principal, no protege correctamente otros puntos de entrada (como la edición de Session ID).
-
-- Es posible explotar la vulnerabilidad utilizando vectores alternativos de ataque.
-
+- El sistema responde de forma diferenciada a credenciales correctas e incorrectas, facilitando la automatización.
 
 ## 🛡️ Medidas de Mitigación
 
-- Validar **todas** las entradas de usuario, no solo las principales.
+- Implementar bloqueo de cuenta tras varios intentos fallidos consecutivos.
 
-- Aplicar **consultas parametrizadas** en todas las consultas SQL que reciban datos de entrada externa.
+- Utilizar CAPTCHAs para dificultar ataques automatizados.
 
-- Minimizar el número de puntos donde el usuario puede modificar directamente parámetros sensibles.
+- Homogeneizar las respuestas del servidor (misma respuesta para éxito o fallo).
 
+- Emplear mecanismos de protección de acceso como autenticación multifactor (MFA).
 
 ---
 
