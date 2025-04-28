@@ -45,6 +45,7 @@ Donde:
 - `http-get-form`: tipo de petición.
 
 - `PHPSESSID`: ID de sesión activa en DVWA.
+  
 
 📸 **Captura de ejecución del ataque con Hydra:**
 
