@@ -99,6 +99,7 @@ Se intentó realizar un ataque de fuerza bruta utilizando **Hydra** con los mism
 Durante la ejecución del ataque, se observó que:
 
 - El tiempo estimado para completar el ataque era superior a **52 horas**.
+
 - El servidor ralentiza deliberadamente las respuestas después de múltiples intentos fallidos.
   
 Debido al tiempo excesivo requerido, se decidió **no completar el ataque** para no comprometer los recursos del entorno de prácticas.
