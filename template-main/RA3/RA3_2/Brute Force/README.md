@@ -120,11 +120,9 @@ Debido al tiempo excesivo requerido, se decidió **no completar el ataque** para
   
 - Limitar las tasas de intentos por cuenta o IP (Rate Limiting).
 
----
-
-
 
 ---
+
 
 ## 📬 Referencias
 **[Command Injection](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Command%20Injection)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
