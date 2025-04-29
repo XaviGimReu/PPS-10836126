@@ -1,4 +1,4 @@
-# 🪈​🪉​🪭​🪇​💉​​ Práctica: Command Injection en DVWA
+# 📩​​​ Práctica: Command Injection en DVWA
 
 ---
 
