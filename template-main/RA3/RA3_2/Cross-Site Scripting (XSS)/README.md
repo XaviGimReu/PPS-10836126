@@ -26,4 +26,26 @@ A través de esta práctica se explorarán las distintas variantes de XSS implem
 
 - 🔹 **[Reflected Cross Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS)/Reflected%20Cross%20Site%20Scripting%20(XSS))** – 🪞 *Ejecución de scripts a través de parámetros que se reflejan en la respuesta del servidor.*
 
-- 🔹 **[Stored Cross Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS)/Stored%20Cross%20Site%20Scripting%20(XSS))** – 💾 *Inyección persistente de scripts maliciosos alma***_**
+- 🔹 **[Stored Cross Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS)/Stored%20Cross%20Site%20Scripting%20(XSS))** – 💾 *Inyección persistente de scripts maliciosos almacenados en la base de datos de la aplicación.*
+
+- 🔹 **[DOM Based Cross Site Scripting (XSS)](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA3/RA3_2/Cross-Site%20Scripting%20(XSS)/DOM%20Based%20Cross%20Site%20Scripting%20(XSS))** – 🧠 *Manipulación del DOM del navegador directamente mediante scripts sin interacción con el servidor.*
+
+---
+
+## ⚙️ Entorno de Pruebas
+
+- Todas las pruebas han sido realizadas utilizando la plataforma **DVWA (Damn Vulnerable Web Application)** en un entorno virtualizado con **Kali Linux**.
+
+- Se recomienda utilizar navegadores con herramientas de desarrollo y activar la inspección de tráfico para observar cómo los scripts se comportan.
+
+---
+
+## 📚 Recursos de Interés
+
+- **[OWASP - XSS](https://owasp.org/www-community/attacks/xss/)** – *Guía oficial de OWASP sobre Cross-Site Scripting.*
+  
+- **[PortSwigger - XSS Explained](https://portswigger.net/web-security/cross-site-scripting)** – *Documentación técnica y ejemplos interactivos.*
+
+- **[Google XSS Game](https://xss-game.appspot.com/)** – *Juego interactivo para aprender XSS de forma práctica.*
+
+---
