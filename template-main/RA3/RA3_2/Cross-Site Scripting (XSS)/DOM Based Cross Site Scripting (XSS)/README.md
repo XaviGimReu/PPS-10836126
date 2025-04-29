@@ -25,7 +25,7 @@ En este nivel, el valor del parámetro `default` de la URL es reflejado directam
 
 2. Observa que se utiliza el parámetro `default` en la URL:
 
-```http
+```text
 http://127.0.0.1/DVWA/vulnerabilities/xss_d/?default=English
 ```
 
