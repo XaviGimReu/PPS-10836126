@@ -18,7 +18,6 @@ Durante esta práctica, se analiza cómo explotar esta vulnerabilidad en DVWA en
 En este nivel, DVWA no implementa ningún tipo de protección CSRF.  
 La aplicación acepta cualquier solicitud POST válida, incluso si proviene de otro dominio o archivo local.
 
----
 
 ## 🛠️ Procedimiento
 
