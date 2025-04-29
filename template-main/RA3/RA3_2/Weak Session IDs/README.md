@@ -1,4 +1,4 @@
-# 🛡️ Práctica: Weak Session IDs en DVWA
+# 🪪​ Práctica: Weak Session IDs en DVWA
 
 ---
 
