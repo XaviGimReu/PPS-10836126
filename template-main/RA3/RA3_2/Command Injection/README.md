@@ -16,7 +16,6 @@ Durante esta práctica se explorará la explotación de esta vulnerabilidad en l
 
 En el nivel **Low**, DVWA no realiza ningún tipo de filtrado o validación sobre la entrada del usuario, permitiendo ejecutar comandos directamente en el sistema operativo.
 
----
 
 ## 🛠️ Procedimiento
 
