@@ -10,7 +10,7 @@ Durante esta práctica se explorará la explotación de esta vulnerabilidad en l
 
 ---
 
-# 🔷🔶💠 Nivel de Seguridad: Low, Medium y High
+# 🔷/🔶/💠 Nivel de Seguridad: Low, Medium y High
 
 ## 📌 Descripción
 
