@@ -14,7 +14,11 @@ Durante esta práctica se explorará la explotación de esta vulnerabilidad en l
 
 ## 📌 Descripción
 
-En el nivel **Low**, DVWA no realiza ningún tipo de filtrado o validación sobre la entrada del usuario, permitiendo ejecutar comandos directamente en el sistema operativo.
+A pesar de las diferencias teóricas entre los niveles **Low**, **Medium** y **High**, en esta práctica se ha comprobado que el comportamiento de la vulnerabilidad de **Command Injection** es **idéntico en los tres niveles**.
+
+DVWA permite al usuario introducir una dirección IP para realizar un comando `ping` en el sistema. No obstante, esta entrada no es adecuadamente sanitizada, lo que permite inyectar comandos adicionales del sistema operativo mediante separadores como `;`.
+
+Esto significa que es posible ejecutar **comandos arbitrarios** (como `ls`) directamente desde el campo de entrada en **todos los niveles de seguridad**, lo cual demuestra una falta efectiva de medidas de mitigación reales.
 
 
 ## 🛠️ Procedimiento
