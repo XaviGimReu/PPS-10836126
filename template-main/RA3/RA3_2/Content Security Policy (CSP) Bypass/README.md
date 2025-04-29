@@ -1,4 +1,4 @@
-# 🛡️ Práctica: Content Security Policy (CSP) Bypass en DVWA
+# ​🔗​ Práctica: Content Security Policy (CSP) Bypass en DVWA
 
 ---
 
