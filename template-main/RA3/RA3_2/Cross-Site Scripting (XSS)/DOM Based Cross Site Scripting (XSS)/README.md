@@ -113,6 +113,7 @@ Sin embargo, **se puede romper la estructura HTML y utilizar una etiqueta altern
 
 - Aplicar codificación de salida y escape de atributos en todos los puntos de inserción
 
+---
 
 ## 💠 Nivel de Seguridad: High
 
