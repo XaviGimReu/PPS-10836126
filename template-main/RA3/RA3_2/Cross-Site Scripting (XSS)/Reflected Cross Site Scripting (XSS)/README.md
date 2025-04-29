@@ -1,14 +1,14 @@
-# 🛡️ DOM Based Cross Site Scripting (XSS)
+# 🛡️ Reflected Cross Site Scripting (XSS)
 
 ---
 
 ## 📖 Introducción
 
-**DOM-Based XSS** es una variante de Cross Site Scripting en la que la inyección de código malicioso no pasa por el servidor, sino que se ejecuta directamente en el navegador del usuario mediante la manipulación del DOM (Document Object Model).
+**Reflected XSS** es una vulnerabilidad en la que los datos maliciosos enviados por el atacante a través de una URL o formulario son reflejados inmediatamente en la respuesta de la aplicación web sin ser almacenados.
 
-Esto ocurre cuando **datos no confiables son utilizados directamente en scripts del lado cliente**, sin una validación o sanitización adecuada.
+Estos datos pueden contener scripts maliciosos que el navegador ejecutará, lo que puede llevar al robo de cookies, redirecciones o ejecución arbitraria de código.
 
-En esta práctica trabajaremos con los tres niveles de seguridad en DVWA para entender cómo se produce esta vulnerabilidad y cómo puede ser explotada.
+En este apartado se analizarán los tres niveles de seguridad implementados por DVWA.
 
 ---
 
@@ -16,56 +16,44 @@ En esta práctica trabajaremos con los tres niveles de seguridad en DVWA para en
 
 ### 📌 Descripción
 
-En este nivel, el valor del parámetro `default` de la URL es reflejado directamente en el HTML mediante JavaScript, sin ningún tipo de validación.
+El valor introducido en el campo `What's your name?` se refleja directamente en el HTML sin ninguna validación ni codificación.
 
 
 ### 🛠️ Procedimiento
 
-1. Accede al apartado **DOM Based XSS** y presiona el botón `Select`.
+1. Accede al apartado **Reflected XSS** en DVWA.
 
-2. Observa que se utiliza el parámetro `default` en la URL:
-
-```text
-http://127.0.0.1/DVWA/vulnerabilities/xss_d/?default=English
-```
-
-
-📸 **Captura ejemplo del parámetro `default` en la URL:**
-
-
-![menu](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/DOM_Based_Cross_Site_Scripting(XSS)%20-%20low_1.png)
-
-
-3. Modifica el parámetro con el siguiente payload:
+2. Introduce el siguiente payload en el campo:
 
 ```html
-<script>alert(document.cookie);</script>
+<img src=x onerror="alert(document.cookie)">
 ```
 
-📸 **Captura ejemplo del parámetro `default` en la URL:**
+
+📸 **Captura del ataque ejecutado correctamente en nivel Low:**
 
 
-![DOM_XSS_low](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/DOM_Based_Cross_Site_Scripting(XSS)%20-%20low_2.png)
+![Reflected_XSS_low](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Reflected_Cross_Site_Scripting(XSS)%20-%20low_1.png)
 
-✅ El navegador ejecuta directamente el `alert()` mostrando la cookie.
+✅ El navegador interpreta el contenido malicioso e inmediatamente ejecuta `alert(document.cookie)`.
 
 
 ## 📋 Resumen
 
-- Se refleja directamente el valor del parámetro sin ningún tipo de filtrado o escape.
+- El input se refleja directamente en la página sin ninguna validación.
 
-- La ejecución del script malicioso es inmediata.
+- Es vulnerable a cualquier tipo de inyección de código JavaScript.
 
-- Esta es una de las formas más básicas de DOM XSS.
+- Este nivel representa el caso más inseguro de Reflected XSS.
 
 
 ## 🛡️ Medidas de Mitigación
 
-- Nunca insertar contenido controlado por el usuario directamente en el DOM sin validación.
+- Escapar adecuadamente los caracteres especiales en la salida (`<`, `>`, `"`, `'`, `&`).
 
-- Utilizar funciones como `textContent` en lugar de `innerHTML`.
+- Utilizar frameworks que gestionen automáticamente la codificación de salida.
 
-- Escapar caracteres especiales en cualquier entrada reflejada.
+- No reflejar directamente ningún dato sin validarlo y sanearlo antes.
 
 ---
 
@@ -73,45 +61,41 @@ http://127.0.0.1/DVWA/vulnerabilities/xss_d/?default=English
 
 ### 📌 Descripción
 
-En este nivel, el valor del parámetro está encerrado dentro de una etiqueta `<option>`, lo que impide el uso directo de etiquetas `<script>`. 
-
-Sin embargo, **se puede romper la estructura HTML y utilizar una etiqueta alternativa como `<img>` con eventos JavaScript**.
+Este nivel implementa filtrado básico, pero no lo suficientemente robusto. El mismo payload utilizado en el nivel Low todavía es funcional.
 
 
 ### 🛠️ Procedimiento
 
-1. Abre el apartado **DOM Based XSS**.
+1. Repite el mismo procedimiento que en el nivel Low.
 
-2. Introduce el siguiente payload:
+2. Introduce el payload:
 
 ```html
-"></option></select><img src=x onerror="alert(document.cookie)">
+<img src=x onerror="alert(document.cookie)">
 ```
 
-📸 **Captura del ataque exitoso en nivel Medium:**
+📸 **Captura del ataque en nivel Medium:**
 
 
-![DOM_XSS_med](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/DOM_Based_Cross_Site_Scripting(XSS)%20-%20med_1.png)
+![Reflected_XSS_med](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Reflected_Cross_Site_Scripting(XSS)%20-%20med_1.png)
 
-✅ Se rompe el contexto HTML y se ejecuta el `alert()` mediante un evento `onerror`.
+✅ A pesar de estar en un nivel de seguridad superior, el payload aún es ejecutado.
 
 
 ## 📋 Resumen
 
-- Aunque el contexto HTML intenta restringir el uso de scripts, no se filtran completamente.
+- Existe un intento de protección, pero no se bloquean correctamente las etiquetas `<img>` ni los eventos como `onerror`.
 
-- Es posible inyectar etiquetas HTML maliciosas mediante técnicas de escape.
-
-- Aún hay una superficie de ataque relevante.
+- Las medidas implementadas no protegen contra los vectores más comunes.
 
 
 ## 🛡️ Medidas de Mitigación
 
-- No construir elementos HTML con datos de usuario directamente.
+- Implementar listas blancas de entrada válidas.
 
-- Implementar listas blancas de valores permitidos.
+- Usar filtros más estrictos, especialmente en contextos HTML.
 
-- Aplicar codificación de salida y escape de atributos en todos los puntos de inserción
+ -Reforzar la codificación de salida y revisar los puntos de inserción dinámicos.
 
 ---
 
@@ -119,44 +103,41 @@ Sin embargo, **se puede romper la estructura HTML y utilizar una etiqueta altern
 
 ### 📌 Descripción
 
-En este nivel, DVWA implementa una lista blanca de valores permitidos.
-
-El parámetro `default` se filtra, pero **se puede inyectar código después del carácter `#`**, que es interpretado solo por el navegador y no enviado al servidor.
+En este nivel, DVWA intenta filtrar mejor los caracteres maliciosos y aplicar validaciones más sólidas. Sin embargo, el mismo payload sigue funcionando correctamente.
 
 
 ### 🛠️ Procedimiento
 
-1. Modifica la URL e introduce el siguiente payload después del valor permitido:
+1. Introduce el mismo payload en el campo
 
 ```html
-http://127.0.0.1/DVWA/vulnerabilities/xss_d/?default=English#<script>alert(document.cookie);</script>
+<img src=x onerror="alert(document.cookie)">
 ```
 
 📸 **Captura del ataque en nivel High:**
 
 
-![DOM_XSS_high](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/DOM_Based_Cross_Site_Scripting(XSS)%20-%20high_1.png)
+![Reflected_XSS_high](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Reflected_Cross_Site_Scripting(XSS)%20-%20high_1.png)
 
-✅ El código inyectado se ejecuta desde el fragmento `#` de la URL, ya que sigue siendo interpretado por el DOM del navegador.
+✅ El código malicioso no es detectado ni filtrado, lo que permite explotar la vulnerabilidad incluso en el nivel High.
 
 
 ## 📋 Resumen
 
-- La validación del parámetro `default` no bloquea el contenido después del `#`.
+- A pesar de estar en el nivel más seguro, los controles son aún insuficientes.
 
-- Esta parte es interpretada por el navegador, lo que permite inyectar scripts.
+- El uso de etiquetas HTML como `<img>` con atributos maliciosos sigue siendo efectivo.
 
-- La protección es más robusta, pero aún existe un vector de ataque no controlado.
+- Se requieren mejoras considerables en la política de validación.
 
 
 ## 🛡️ Medidas de Mitigación
 
-- Ignorar o sanitizar correctamente el contenido de la parte `#fragment` de la URL.
+- Utilizar bibliotecas especializadas en sanitización como **DOMPurify**.
 
-- Usar librerías como **DOMPurify** para limpiar cualquier entrada antes de manipular el DOM.
+- Implementar políticas CSP (Content Security Policy) que bloqueen scripts externos.
 
-- Validar valores antes de que sean usados en cualquier asignación DOM directa.
-
+- Validar la entrada tanto en el lado cliente como en el servidor.
 
 ---
 
