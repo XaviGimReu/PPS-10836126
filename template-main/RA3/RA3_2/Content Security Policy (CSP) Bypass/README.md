@@ -17,7 +17,8 @@ Durante esta práctica se explora cómo vulnerar la política CSP en los niveles
 
 ## 📌 Descripción
 
-En este nivel, la aplicación permite incluir scripts externos directamente desde dominios como **Pastebin** o **digi.ninja**, sin aplicar restricciones reales.  
+En este nivel, la aplicación permite incluir scripts externos directamente desde dominios como **Pastebin** o **digi.ninja**, sin aplicar restricciones reales.
+
 Esto permite al atacante cargar scripts maliciosos desde sitios externos, eludiendo por completo la protección que debería ofrecer CSP.
 
 ## 🛠️ Procedimiento
