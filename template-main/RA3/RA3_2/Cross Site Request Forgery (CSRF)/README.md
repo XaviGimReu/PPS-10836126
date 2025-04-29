@@ -1,4 +1,4 @@
-# 🛡️ Práctica: Cross-Site Request Forgery (CSRF) en DVWA
+# ⛓️‍💥​ Práctica: Cross-Site Request Forgery (CSRF) en DVWA
 
 ---
 
