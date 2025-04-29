@@ -1,4 +1,4 @@
-# 🛡️ Práctica: Brute Force en DVWA
+# 🦾​ Práctica: Brute Force en DVWA
 
 ---
 
