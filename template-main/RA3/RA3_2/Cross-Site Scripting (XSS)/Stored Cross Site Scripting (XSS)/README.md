@@ -72,34 +72,33 @@ Aquí se introduce una limitación en el número de caracteres del campo **Name*
 <sCrIPt>alert(document.cookie);</sCrIPt>
 ```
 
-#### 2. Si el sistema impide su inserción por límite de longitud, modifica el atributo maxlength del campo con herramientas de desarrollador (F12).
-
+2. Si el sistema impide su inserción por límite de longitud, modifica el atributo `maxlength` del campo con herramientas de desarrollador (F12).
 
 
 📸 **Captura del ataque en nivel Medium:**
 
 
-![Reflected_XSS_med](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Reflected_Cross_Site_Scripting(XSS)%20-%20med_1.png)
+![Stored_XSS_med](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Stored_Cross_Site_Scripting(XSS)%20-%20med_1.png)
 
-✅ A pesar de estar en un nivel de seguridad superior, el payload aún es ejecutado.
+✅ El script se ejecuta exitosamente, demostrando que la protección no es suficiente.
 
 
 ## 📋 Resumen
 
-- No se realiza ninguna sanitización ni validación.
+- El sistema intenta limitar el tamaño de la entrada, pero no impide la inyección.
 
-- El script malicioso se guarda en el servidor y se ejecuta en cada visita a la página.
+- Se pueden evadir restricciones del navegador fácilmente.
 
-- Todos los usuarios que accedan a esa página serán afectados.
+- No se realiza ningún tipo de codificación en la salida del dato.
 
 
 ## 🛡️ Medidas de Mitigación
 
-- Escapar los caracteres HTML especiales (`<`, `>`, `"`, etc.) antes de mostrarlos.
+- Aplicar validación del lado del servidor, no solo en el navegador.
 
-- Utilizar librerías de sanitización como DOMPurify.
+- Rechazar cualquier dato con contenido potencialmente peligroso, incluso si se mezcla el uso de mayúsculas/minúsculas.
 
-- Validar del lado servidor todo el contenido antes de almacenarlo.
+- Usar codificación en la salida y listas blancas.
 
 ---
 
@@ -107,41 +106,41 @@ Aquí se introduce una limitación en el número de caracteres del campo **Name*
 
 ### 📌 Descripción
 
-En este nivel, DVWA intenta filtrar mejor los caracteres maliciosos y aplicar validaciones más sólidas. Sin embargo, el mismo payload sigue funcionando correctamente.
+Este nivel bloquea el uso de etiquetas `<script>`, pero aún **permite otras técnicas como el uso de eventos HTML en etiquetas de imagen** para ejecutar JavaScript.
 
 
 ### 🛠️ Procedimiento
 
-1. Introduce el mismo payload en el campo
+1. Usa el siguiente payload en cualquier campo visible:
 
 ```html
-<img src=x onerror="alert(document.cookie)">
+<ImG src=x onerror="alert(document.cookie)">
 ```
 
-📸 **Captura del ataque en nivel High:**
+📸 **Captura del ataque exitoso en nivel High:**
 
 
-![Reflected_XSS_high](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Reflected_Cross_Site_Scripting(XSS)%20-%20high_1.png)
+![Stored_XSS_high](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Stored_Cross_Site_Scripting(XSS)%20-%20high_1.png)
 
-✅ El código malicioso no es detectado ni filtrado, lo que permite explotar la vulnerabilidad incluso en el nivel High.
+✅ A pesar del bloqueo de `<script>`, el payload se ejecuta usando eventos HTML como `onerror`.
 
 
 ## 📋 Resumen
 
-- A pesar de estar en el nivel más seguro, los controles son aún insuficientes.
+- Aunque se bloquean etiquetas explícitas, los eventos siguen siendo un vector válido de ataque.
 
-- El uso de etiquetas HTML como `<img>` con atributos maliciosos sigue siendo efectivo.
+- No se realiza escape de atributos ni etiquetas alternativas.
 
-- Se requieren mejoras considerables en la política de validación.
+- El entorno aún es vulnerable a ataques más sofisticados.
 
 
 ## 🛡️ Medidas de Mitigación
 
-- Utilizar bibliotecas especializadas en sanitización como **DOMPurify**.
+- Rechazar o codificar todos los campos de entrada antes de almacenarlos.
 
-- Implementar políticas CSP (Content Security Policy) que bloqueen scripts externos.
+- Filtrar etiquetas HTML completas y sus atributos.
 
-- Validar la entrada tanto en el lado cliente como en el servidor.
+- Implementar Content Security Policy (CSP) para restringir ejecución de scripts arbitrarios.
 
 ---
 
