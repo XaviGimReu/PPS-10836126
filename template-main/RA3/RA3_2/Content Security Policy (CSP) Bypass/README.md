@@ -104,9 +104,6 @@ El siguiente payload aprovecha este valor para ejecutar código JavaScript inyec
 
 - Utilizar mecanismos complementarios como Subresource Integrity (SRI).
 
----
-
-
 
 ---
 
