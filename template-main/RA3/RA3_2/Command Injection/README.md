@@ -26,7 +26,7 @@ Inicialmente, se introduce una dirección IP o el nombre `localhost` para realiz
 
 📸 **Captura de la ejecución del ping legítimo:**
 
-![ping_legitimo](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Command_Injection%20-%20low%26mid%26high_1.png)
+![ping](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Command_Injection%20-%20low%26mid%26high_1.png)
 
 ✅ Esto confirma que la aplicación ejecuta el comando `ping` en el sistema operativo con la entrada proporcionada por el usuario.
 
@@ -37,9 +37,32 @@ Inicialmente, se introduce una dirección IP o el nombre `localhost` para realiz
 Se introduce una carga maliciosa para ejecutar un comando arbitrario:
 
 ```bash
-127.0.0.1; ls
+|ls
 ```
 
+Esto permite listar el contenido del directorio del servidor.
+
+📸 **Captura de la ejecución del comando (`ls`):**
+
+![ejecucion_ls](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA3/RA3_2/assets/Command_Injection%20-%20low%26mid%26high_2.png)
+
+✅ Esto confirma que la aplicación es vulnerable a inyección de comandos, permitiendo ejecutar instrucciones arbitrarias en el sistema operativo.
+
+
+## 📋 Resumen
+
+- La ausencia de validación permite la ejecución de comandos arbitrarios desde la entrada del usuario.
+
+- Se compromete la integridad del servidor ejecutando comandos como `ls`, `whoami`, `cat`, etc.
+
+
+## 🛡️ Medidas de Mitigación
+
+- Validar y sanitizar adecuadamente toda la entrada del usuario.
+
+- Utilizar funciones seguras para ejecutar comandos (`escapeshellarg`, `escapeshellcmd`).
+
+- Evitar el uso directo de entradas de usuario en funciones que ejecutan comandos del sistema operativo.
 
 ---
 
