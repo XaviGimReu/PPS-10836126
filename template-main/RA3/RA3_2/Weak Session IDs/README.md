@@ -26,6 +26,7 @@ Cada vez que se cierra la sesión y se vuelve a iniciar, **el valor del `PHPSESS
 
 Pasos para identificar la vulnerabilidad:
 
+
 1. Abre las herramientas de desarrollo del navegador (`F12`) y ve a la pestaña **Application → Cookies** (o Storage).
 
 2. Anota el valor actual del `PHPSESSID`.
@@ -35,8 +36,7 @@ Pasos para identificar la vulnerabilidad:
 4. Observa el nuevo valor de `PHPSESSID`.
 
 
-✅ Verás que el nuevo ID de sesión es exactamente **el anterior +1**.  
-Por ejemplo: `12345 → 12346`.
+✅ Verás que el nuevo ID de sesión es exactamente **el anterior +1**. Por ejemplo: `12345 → 12346`.
 
 📸 **Captura ejemplo del comportamiento secuencial del ID de sesión en nivel Low.**  
 
@@ -75,11 +75,13 @@ Esto significa que el valor de la sesión **está basado en la hora Unix actual*
 
 Pasos:
 
+
 1. Repite el proceso anterior (anota el nuevo `PHPSESSID` tras iniciar sesión).
 
 2. Accede a [https://www.unixtimestamp.com/](https://www.unixtimestamp.com/) o una herramienta similar.
 
 3. Introduce el valor del `PHPSESSID` y compáralo con la hora actual.
+
 
 ✅ Verás que el valor de la sesión **coincide o se aproxima a un timestamp**, lo cual permite su predicción con poca diferencia de tiempo.
 
