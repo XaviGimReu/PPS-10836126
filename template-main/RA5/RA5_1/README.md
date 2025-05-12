@@ -115,11 +115,10 @@ pipeline {
 
 ---
 
-## 🧪 Ejecución y pruebas
+# 🧪 Ejecución y pruebas
 
 En esta sección se documenta el proceso de ejecución de la pipeline tradicional y dockerizada, así como los resultados obtenidos durante las pruebas.
 
----
 
 ### 🔹 1. Ejecución local del programa y test en terminal
 
