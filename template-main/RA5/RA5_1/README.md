@@ -25,3 +25,5 @@ Jenkins permite a los equipos de desarrollo compilar, probar y desplegar sus apl
 ### 🔹 Instalación de Jenkins
 
 Se procederá a instalar Jenkins en un entorno controlado, utilizando Docker como motor de contenedores para facilitar su despliegue. Una vez en funcionamiento, se accederá a la interfaz web para realizar la configuración inicial del sistema.
+
+hi
