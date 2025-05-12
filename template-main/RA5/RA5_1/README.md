@@ -104,9 +104,13 @@ pipeline {
 ## 📂 Archivos del proyecto
 
 - `calculadora.py`: función principal
+
 - `test_calculadora.py`: pruebas `unittest`
+
 - `Dockerfile`: configuración del entorno Python
+
 - `docker-compose.yml`: despliegue de servicio
+
 - `Jenkinsfile.docker`: CI/CD completo con Docker
 
 ---
