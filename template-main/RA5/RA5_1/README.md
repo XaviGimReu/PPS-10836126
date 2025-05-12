@@ -42,7 +42,7 @@ RUN pip install --no-cache-dir pytest
 CMD ["pytest", "test_calculadora.py"]
 ```
 
-📸 Enlace al **Dockerfile**:  ![Dockerfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Dockerfile)
+🧬 Enlace al **Dockerfile**:  ![Dockerfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Dockerfile)
 
 ---
 
@@ -96,6 +96,8 @@ pipeline {
     }
 }
 ```
+
+🧬 Enlace al **Jenkinsfile.docker**:  ![Dockerfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Jenkinsfile.docker)
 
 ---
 
