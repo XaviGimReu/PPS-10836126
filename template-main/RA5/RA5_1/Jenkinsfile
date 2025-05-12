@@ -1,5 +1,14 @@
 pipeline {
     agent any
+    
+stage('Instalar Python') {
+    steps {
+        sh '''
+            apt-get update
+            apt-get install -y python3
+        '''
+    }
+}
 
     stages {
         stage('Cambiar a carpeta RA5_1') {
