@@ -1,21 +1,13 @@
 pipeline {
     agent any
-    
-stage('Preparación de la máquina') {
-    steps {
-        sh '''
-            apt-get update
-            apt-get install -y python3
-        '''
-    }
-}
 
     stages {
-        stage('Cambiar a carpeta RA5_1') {
+        stage('Preparación de la máquina') {
             steps {
-                dir('template-main/RA5/RA5_1') {
-                    echo 'Entrando en la carpeta correcta...'
-                }
+                sh '''
+                    apt-get update
+                    apt-get install -y python3
+                '''
             }
         }
 
