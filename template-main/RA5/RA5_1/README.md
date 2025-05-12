@@ -117,23 +117,83 @@ pipeline {
 
 ## 🧪 Ejecución y pruebas
 
-📸 Ejemplo de ejecución local de pruebas:
-![Pruebas OK](assets/unittest_ok.png)
+En esta sección se documenta el proceso de ejecución de la pipeline tradicional y dockerizada, así como los resultados obtenidos durante las pruebas.
 
-📸 Jenkins ejecutando build exitoso:
+---
+
+### 🔹 1. Ejecución local del programa y test en terminal
+
+Se ejecuta la calculadora desde terminal con Python 3 y luego se corren las pruebas unitarias con `unittest`.
+
+```bash
+python3 calculadora.py 7 5
+python3 -m unittest test_calculadora.py
+```
+
+📸 **Captura:**  
+![Ejecución local](assets/unittest_ok.png)
+
+---
+
+### 🔹 2. Ejecución de pipeline tradicional en Jenkins
+
+Una vez configurado Jenkins y vinculado al repositorio, se realiza un `push` al repositorio y Jenkins detecta el cambio ejecutando la pipeline definida en `Jenkinsfile`.
+
+📸 **Captura:**  
 ![Build OK](assets/build_ok.png)
 
-📸 Error intencional detectado por Jenkins:
+---
+
+### 🔹 3. Error intencionado detectado en Jenkins
+
+Para comprobar el control de errores, se modifica la función `multiplicar` para forzar una división entre cero:
+
+```python
+return a / 0
+```
+
+El sistema detecta el fallo y marca la ejecución como fallida.
+
+📸 **Captura:**  
 ![Error detectado](assets/build_fail_div0.png)
 
-📸 Ngrok recibiendo webhook:
-![Webhook OK](assets/ngrok_webhook.png)
+---
 
-📸 Histórico de builds automatizados:
-![AutoBuild](assets/build_auto_trigger.png)
+### 🔹 4. Configuración de webhook con ngrok
 
-📸 Pipeline Docker ejecutando stages:
+Se utiliza ngrok para exponer Jenkins y permitir que GitHub envíe notificaciones cuando se hace un commit.
+
+```bash
+ngrok http 49001
+```
+
+📸 **Captura:**  
+![Ngrok Webhook](assets/ngrok_webhook.png)
+
+---
+
+### 🔹 5. Verificación de ejecución automática
+
+Una vez configurado el webhook, cada `git push` genera automáticamente un nuevo build en Jenkins.
+
+📸 **Captura:**  
+![Auto Build](assets/build_auto_trigger.png)
+
+---
+
+### 🔹 6. Pipeline Docker ejecutando todos los stages
+
+Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiza las siguientes etapas:
+
+1. Construcción de la imagen
+2. Ejecución del contenedor
+3. Ejecución de los tests dentro del contenedor
+4. Eliminación del contenedor
+5. Ejecución de docker-compose
+
+📸 **Captura:**  
 ![Docker Pipeline](assets/docker_pipeline.png)
+
 
 ---
 
