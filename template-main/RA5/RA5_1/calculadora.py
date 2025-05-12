@@ -1,5 +1,5 @@
 def multiplicar(a, b):
-    return a / 0
+    return a * b
 
 if __name__ == "__main__":
     import sys
