@@ -42,8 +42,7 @@ RUN pip install --no-cache-dir pytest
 CMD ["pytest", "test_calculadora.py"]
 ```
 
-📸 Ejemplo del **Dockerfile**:  
-![Dockerfile](assets/Dockerfile.png)
+📸 Enlace al **Dockerfile**:  ![Dockerfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Dockerfile)
 
 ---
 
