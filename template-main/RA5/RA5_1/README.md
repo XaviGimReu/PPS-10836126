@@ -130,7 +130,10 @@ python3 -m unittest test_calculadora.py
 ```
 
 📸 **Captura:**  
-![ejecucion_pruebas](assets/unittest_ok.png)
+
+![ejecucion_pruebas](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/pruebas_ejecucion.png)
+
+
 
 ---
 
@@ -138,8 +141,10 @@ python3 -m unittest test_calculadora.py
 
 Una vez configurado Jenkins y vinculado al repositorio, se realiza un `push` al repositorio y Jenkins detecta el cambio ejecutando la pipeline definida en `Jenkinsfile`.
 
-📸 **Captura:**  
-![ejecucion_pipeline](assets/build_ok.png)
+📸 **Captura:**
+
+![ejecucion_pipeline](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/ejecucion_pipeline.png)
+
 
 ---
 
@@ -151,10 +156,14 @@ Para comprobar el control de errores, se modifica la función `multiplicar` para
 return a / 0
 ```
 
+📸 **Captura:**  
+![error_intencionado](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/error_intencionado.png)
+
+
 El sistema detecta el fallo y marca la ejecución como fallida.
 
 📸 **Captura:**  
-![Error detectado](assets/build_fail_div0.png)
+![prueba_error](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/prueba_error.png)
 
 ---
 
@@ -167,7 +176,7 @@ ngrok http 49001
 ```
 
 📸 **Captura:**  
-![Ngrok Webhook](assets/ngrok_webhook.png)
+![exposicion_ngrok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/exposicion_ngrok.png)
 
 ---
 
@@ -176,7 +185,14 @@ ngrok http 49001
 Una vez configurado el webhook, cada `git push` genera automáticamente un nuevo build en Jenkins.
 
 📸 **Captura:**  
-![Auto Build](assets/build_auto_trigger.png)
+![build_automatico](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/build_automatico.png)
+
+
+También veremos que en la terminal donde lanzamos **Ngrok** aparece una conexión `200 OK`.
+
+📸 **Captura:**  
+![build_automatico_ngrok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/build_automatico_ngrok.png)
+
 
 ---
 
