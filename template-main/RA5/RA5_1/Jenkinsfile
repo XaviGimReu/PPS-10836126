@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar repositorio') {
+            steps {
+                git 'https://github.com/XaviGimReu/PPS-10836126.git'
+            }
+        }
+
+        stage('Cambiar a carpeta RA5_1') {
+            steps {
+                dir('template-main/RA5/RA5_1') {
+                    echo '📂 Entrando en la carpeta correcta...'
+                }
+            }
+        }
+
+        stage('Ejecutar pruebas') {
+            steps {
+                dir('template-main/RA5/RA5_1') {
+                    sh 'python3 -m unittest test_calculadora.py'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pruebas ejecutadas correctamente.'
+        }
+        failure {
+            echo 'Fallo en la pipeline.'
+        }
+    }
+}
