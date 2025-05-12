@@ -21,11 +21,6 @@ Finalmente, se consolidó el proceso en un fichero `Jenkinsfile.docker` permitie
 
 ---
 
-## 📦 Repositorio de la práctica
-
-🔗 [**Repositorio GitHub - Jenkins + Docker + Python**](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_1)
-
----
 
 ## 📌 Prácticas Implementadas
 
