@@ -259,3 +259,15 @@ Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiz
 Se logró implementar con éxito un entorno completo de integración y entrega continua sobre Jenkins, utilizando contenedores Docker y prácticas reales de automatización.
 
 El proyecto permite validar código Python, ejecutar tests automáticamente y construir imágenes reproducibles listas para producción.
+
+---
+
+## 📬 Referencias
+**[Dockerfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Dockerfile)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[Jenkinsfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Jenkinsfile)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[Jenkinsfile.docker](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/Jenkinsfile.docker)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[calculadora.py)](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/calculadora.py)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[docker-compose.yml)](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/docker-compose.yml)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[test_calculadora.py](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/test_calculadora.py)**
+
+---
