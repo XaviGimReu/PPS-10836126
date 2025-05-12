@@ -20,8 +20,6 @@ Entre las acciones realizadas, se incluye:
 
 Finalmente, se consolidó el proceso en un fichero `Jenkinsfile.docker` permitiendo replicar la integración de forma segura y automatizada.
 
----
-
 
 ## 📌 Prácticas Implementadas
 
@@ -30,7 +28,6 @@ Finalmente, se consolidó el proceso en un fichero `Jenkinsfile.docker` permitie
 - 🔹 **Webhook GitHub + Ngrok** – 🔁 *Desencadenar pipeline al hacer push*
 - 🔹 **Pipeline Dockerizada** – 🐳 *Tests ejecutados completamente dentro de contenedores Docker*
 
----
 
 ## 🔨 Dockerfile
 
