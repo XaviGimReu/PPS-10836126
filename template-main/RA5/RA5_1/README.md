@@ -3,6 +3,7 @@
 ## 📖 Introducción
 
 En esta práctica se ha desarrollado un sistema de **Integración Continua (CI)** y **Entrega Continua (CD)** utilizando **Jenkins**, aplicado a un proyecto en Python.  
+
 A través de esta implementación se han automatizado tareas de compilación, testeo y despliegue dentro de contenedores Docker.
 
 Entre las acciones realizadas, se incluye:
