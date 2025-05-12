@@ -212,7 +212,7 @@ Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiz
 
 
 📸 **Captura:**  
-![Docker Pipeline](assets/docker_pipeline.png)
+![Docker Pipeline](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/pipeline_jenkinsfile_docker.png)
 
 
 ---
