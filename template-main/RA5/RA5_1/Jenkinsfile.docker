@@ -4,34 +4,44 @@ pipeline {
     stages {
         stage('Construir imagen Docker') {
             steps {
-                sh 'docker build -t calculadora-ci .'
+                dir('template-main/RA5/RA5_1') {
+                    sh 'docker build -t calculadora-ci .'
+                }
             }
         }
 
         stage('Ejecutar contenedor') {
             steps {
-                sh 'docker run --name contenedor-calculadora -d calculadora-ci tail -f /dev/null'
+                dir('template-main/RA5/RA5_1') {
+                    sh 'docker run --name contenedor-calculadora -d calculadora-ci tail -f /dev/null'
+                }
             }
         }
 
         stage('Ejecutar tests en el contenedor') {
             steps {
-                sh 'docker exec contenedor-calculadora pytest test_calculadora.py'
+                dir('template-main/RA5/RA5_1') {
+                    sh 'docker exec contenedor-calculadora pytest test_calculadora.py'
+                }
             }
         }
 
         stage('Detener y eliminar contenedor') {
             steps {
-                sh '''
-                    docker stop contenedor-calculadora
-                    docker rm contenedor-calculadora
-                '''
+                dir('template-main/RA5/RA5_1') {
+                    sh '''
+                        docker stop contenedor-calculadora
+                        docker rm contenedor-calculadora
+                    '''
+                }
             }
         }
 
         stage('Ejecutar docker-compose') {
             steps {
-                sh 'docker-compose up --build -d'
+                dir('template-main/RA5/RA5_1') {
+                    sh 'docker-compose up --build -d'
+                }
             }
         }
     }
