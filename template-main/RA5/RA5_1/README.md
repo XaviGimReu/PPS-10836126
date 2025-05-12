@@ -143,11 +143,12 @@ python3 calculadora.py 7 5
 python3 -m unittest test_calculadora.py
 ```
 
-📸 **Captura de:**  
+📸 **Captura de ejecución local del programa y pruebas unitarias:**  
+
 
 ![ejecucion_pruebas](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/pruebas_ejecucion.png)
 
-
+**✅ Validación manual del correcto funcionamiento del programa y los tests antes de la integración en Jenkins.**
 
 ---
 
@@ -155,10 +156,12 @@ python3 -m unittest test_calculadora.py
 
 Una vez configurado Jenkins y vinculado al repositorio, se realiza un `push` al repositorio y Jenkins detecta el cambio ejecutando la pipeline definida en `Jenkinsfile`.
 
-📸 **Captura:**
+📸 **Captura de ejecución de pipeline tradicional en Jenkins:**
+
 
 ![ejecucion_pipeline](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/ejecucion_pipeline.png)
 
+**✅ Jenkins ejecuta correctamente la pipeline definida en el archivo Jenkinsfile tras detectar un commit en GitHub.**
 
 ---
 
@@ -170,14 +173,20 @@ Para comprobar el control de errores, se modifica la función `multiplicar` para
 return a / 0
 ```
 
-📸 **Captura:**  
+📸 **Captura de error provocado intencionadamente en el código Python:**  
+
+
 ![error_intencionado](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/error_intencionado.png)
+
+**⚠️ Error generado manualmente para probar que Jenkins detecta fallos en la ejecución de pruebas.**
 
 
 El sistema detecta el fallo y marca la ejecución como fallida.
 
-📸 **Captura:**  
+📸 **Captura de fallo en la pipeline debido a un error de código:**  
 ![prueba_error](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/prueba_error.png)
+
+**❌ Jenkins marca la ejecución como fallida debido a una excepción provocada en el test.**
 
 ---
 
@@ -189,8 +198,12 @@ Se utiliza ngrok para exponer Jenkins y permitir que GitHub envíe notificacione
 ngrok http 49001
 ```
 
-📸 **Captura:**  
+📸 **Captura de la exposición de Jenkins mediante Ngrok:**
+
+
 ![exposicion_ngrok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/exposicion_ngrok.png)
+
+**🌐 Jenkins se expone públicamente para permitir la recepción de Webhooks desde GitHub.**
 
 ---
 
@@ -198,15 +211,22 @@ ngrok http 49001
 
 Una vez configurado el webhook, cada `git push` genera automáticamente un nuevo build en Jenkins.
 
-📸 **Captura:**  
+📸 **Captura de build automático en Jenkins:**
+
+
 ![build_automatico](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/build_automatico.png)
+
+**✅ Confirmación visual de que Jenkins lanza automáticamente una nueva ejecución tras recibir un Webhook de GitHub.**
 
 
 También veremos que en la terminal donde lanzamos **Ngrok** aparece una conexión `200 OK`.
 
-📸 **Captura:**  
+📸 **Captura de confirmación `HTTP 200` en la consola de Ngrok:**
+
+
 ![build_automatico_ngrok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/build_automatico_ngrok.png)
 
+**🔁 Jenkins ha recibido correctamente el webhook y procesado la solicitud.**
 
 ---
 
@@ -225,9 +245,12 @@ Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiz
 5. Ejecución de docker-compose
 
 
-📸 **Captura:**  
+📸 **Captura de ejecución de Jenkinsfile.docker:**
+
+
 ![Docker Pipeline](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/pipeline_jenkinsfile_docker.png)
 
+**🐳 Jenkins ejecuta correctamente todas las etapas Docker: construir imagen, ejecutar contenedor, lanzar tests y usar docker-compose.**
 
 ---
 
