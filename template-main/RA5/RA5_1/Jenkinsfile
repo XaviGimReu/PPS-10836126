@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-stage('Instalar Python') {
+stage('Preparación de la máquina') {
     steps {
         sh '''
             apt-get update
