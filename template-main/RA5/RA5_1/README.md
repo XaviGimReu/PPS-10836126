@@ -129,7 +129,7 @@ python3 calculadora.py 7 5
 python3 -m unittest test_calculadora.py
 ```
 
-📸 **Captura:**  
+📸 **Captura de:**  
 
 ![ejecucion_pruebas](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_1/assets/pruebas_ejecucion.png)
 
