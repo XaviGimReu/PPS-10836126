@@ -8,9 +8,13 @@ A través de esta implementación se han automatizado tareas de compilación, te
 Entre las acciones realizadas, se incluye:
 
 - ✅ Configuración de un **proyecto Python** con pruebas unitarias (`unittest`)
+
 - ✅ Implementación de una **pipeline tradicional** en Jenkins (con `Jenkinsfile`)
+
 - ✅ Automatización con **Docker**: construcción, ejecución y testing en contenedores
+
 - ✅ Uso de **webhooks y ngrok** para ejecución automática desde GitHub
+
 - ✅ Configuración de un entorno reproducible mediante **`docker-compose`**
 
 Finalmente, se consolidó el proceso en un fichero `Jenkinsfile.docker` permitiendo replicar la integración de forma segura y automatizada.
