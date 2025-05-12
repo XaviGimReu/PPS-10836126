@@ -130,7 +130,7 @@ python3 -m unittest test_calculadora.py
 ```
 
 📸 **Captura:**  
-![Ejecución local](assets/unittest_ok.png)
+![ejecucion_pruebas](assets/unittest_ok.png)
 
 ---
 
@@ -139,7 +139,7 @@ python3 -m unittest test_calculadora.py
 Una vez configurado Jenkins y vinculado al repositorio, se realiza un `push` al repositorio y Jenkins detecta el cambio ejecutando la pipeline definida en `Jenkinsfile`.
 
 📸 **Captura:**  
-![Build OK](assets/build_ok.png)
+![ejecucion_pipeline](assets/build_ok.png)
 
 ---
 
@@ -185,10 +185,15 @@ Una vez configurado el webhook, cada `git push` genera automáticamente un nuevo
 Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiza las siguientes etapas:
 
 1. Construcción de la imagen
+
 2. Ejecución del contenedor
+
 3. Ejecución de los tests dentro del contenedor
+
 4. Eliminación del contenedor
+
 5. Ejecución de docker-compose
+
 
 📸 **Captura:**  
 ![Docker Pipeline](assets/docker_pipeline.png)
