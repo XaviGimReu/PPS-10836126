@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
+    stages {
         stage('Cambiar a carpeta RA5_1') {
             steps {
                 dir('template-main/RA5/RA5_1') {
-                    echo '📂 Entrando en la carpeta correcta...'
+                    echo 'Entrando en la carpeta correcta...'
                 }
             }
         }
