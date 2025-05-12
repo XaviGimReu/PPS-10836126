@@ -233,5 +233,6 @@ Se lanza un nuevo job en Jenkins utilizando `Jenkinsfile.docker`. Jenkins realiz
 
 ## ✅ Conclusión
 
-Se logró implementar con éxito un entorno completo de integración y entrega continua sobre Jenkins, utilizando contenedores Docker y prácticas reales de automatización.  
+Se logró implementar con éxito un entorno completo de integración y entrega continua sobre Jenkins, utilizando contenedores Docker y prácticas reales de automatización.
+
 El proyecto permite validar código Python, ejecutar tests automáticamente y construir imágenes reproducibles listas para producción.
