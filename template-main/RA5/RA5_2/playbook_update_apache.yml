@@ -1,9 +1,9 @@
 ---
-- name: Actualizar el sistema e instalar Apache
+- name: Actualizar sistema e instalar Apache
   hosts: ubuntu
   become: yes
   tasks:
-    - name: Actualizar el sistema
+    - name: Update y upgrade del sistema
       apt:
         update_cache: yes
         upgrade: dist
