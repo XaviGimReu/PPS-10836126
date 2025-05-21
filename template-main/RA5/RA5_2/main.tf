@@ -10,8 +10,8 @@ terraform {
 provider "virtualbox" {}
 
 resource "virtualbox_vm" "ubuntu_vm" {
-  name   = "ubuntu2404"
-  image  = "ubuntu-24.04"
+  name   = "ubuntu2204"
+  image  = "ubuntu/jammy64"
   cpus   = 2
   memory = 2048
 
