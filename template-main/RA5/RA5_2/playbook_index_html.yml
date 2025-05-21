@@ -3,11 +3,10 @@
   hosts: ubuntu
   become: yes
   tasks:
-  
-- name: Crear index.html
-  copy:
-    dest: /var/www/html/index.html
-    content: "Ansible rocks"
+    - name: Crear index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: "Ansible rocks"
 
     - name: Reiniciar Apache
       service:
