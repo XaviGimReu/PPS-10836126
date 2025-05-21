@@ -1,0 +1,22 @@
+---
+- name: Crear index.html personalizado y reiniciar Apache
+  hosts: ubuntu
+  become: yes
+  tasks:
+    - name: Crear archivo index.html con "Ansible rocks"
+      copy:
+        dest: /var/www/html/index.html
+        content: "Ansible rocks"
+
+    - name: Reiniciar Apache
+      service:
+        name: apache2
+        state: restarted
+
+    - name: Verificar contenido del sitio
+      command: curl http://localhost
+      register: resultado
+
+    - name: Mostrar contenido de la respuesta
+      debug:
+        var: resultado.stdout
