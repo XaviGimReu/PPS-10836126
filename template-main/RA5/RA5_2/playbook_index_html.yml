@@ -13,10 +13,10 @@
         name: apache2
         state: restarted
 
-    - name: Verificar mensaje
+    - name: Verificar el mensaje
       command: curl http://localhost
       register: resultado
 
-    - name: Mostrar resultado
+    - name: Mostrar el resultado
       debug:
         var: resultado.stdout
