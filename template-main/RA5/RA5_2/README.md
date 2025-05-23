@@ -120,7 +120,7 @@ ansible-playbook -i inventory.ini playbook_update_apache.yml
 
 ## 🎯 3.3. Crear un `index.html`, reiniciar el servicio y verificarlo mediante `curl`
 
-### Playbook `playbook_index_html.yml`
+Playbook `playbook_index_html.yml`
 
 ```yaml
 ---
