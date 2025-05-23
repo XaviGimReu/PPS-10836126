@@ -77,14 +77,14 @@ Posteriormente, verificaremos que la máquina virtual se haya creado correctamen
 
 ## 🎯 3.2. Configurar una máquina virtual Ubuntu 24.04 en VirtualBox mediante Ansible
 
-### Fichero de inventario `inventory.ini`:
+Fichero de inventario `inventory.ini`:
 
 ```ini
 [ubuntu]
 192.168.56.10 ansible_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key ansible_connection=ssh
 ```
 
-### Playbook `playbook_update_apache.yml`:
+Playbook `playbook_update_apache.yml`:
 
 ```yaml
 ---
