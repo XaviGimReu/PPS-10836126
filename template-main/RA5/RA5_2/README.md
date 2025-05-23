@@ -1,4 +1,4 @@
-# ☁️ Terraform + Ansible: Provisión y Configuración Automática
+# 🌱 Terraform + Ansible: Provisión y Configuración Automática
 
 ## 📖 Introducción
 
