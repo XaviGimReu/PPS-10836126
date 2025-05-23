@@ -1,26 +1,45 @@
  # 🌱 Terraform + Ansible: Provisión y Configuración Automática
 
-## 📖 Introducción
+## 📚 Introducción
 
-En esta práctica se implementa una solución de automatización completa utilizando **Terraform**, **Vagrant** y **Ansible** para el despliegue y configuración de una máquina virtual Ubuntu en VirtualBox.
+En esta práctica se ha llevado a cabo la automatización del aprovisionamiento y configuración de una máquina virtual Ubuntu 24.04 utilizando **Terraform** (a través de Vagrant) y **Ansible**.
 
-Se trata de la **RA5.2**, centrada en la provisión de infraestructura y configuración de servicios.
+El objetivo principal es demostrar la capacidad de automatizar:
+
+* La **creación de una máquina virtual Ubuntu**.
+  
+* La **configuración de red** y recursos hardware.
+ 
+* La **instalación y configuración de Apache2**.
+ 
+* La **verificación del despliegue** mediante un `curl`.
+
+
+## 📂 Archivos del proyecto
+
+* `Vagrantfile`: definición de infraestructura para Terraform (vía Vagrant)
+  
+* `inventory.ini`: inventario estático de Ansible
+  
+* `playbook_update_apache.yml`: actualización del sistema e instalación de Apache
+  
+* `playbook_index_html.yml`: despliegue de contenido web y validación final
+  
+* Capturas: disponibles en el directorio `assets/` del repositorio
 
 ---
 
-## 3.1. Provisionar una máquina virtual Ubuntu 24.04 en Virtualbox mediante Terraform
+## 🎯 3.1. Provisionar una máquina virtual Ubuntu 24.04 en Virtualbox mediante Terraform
 
-Se ha utilizado **Vagrant** como proveedor dentro de **Terraform** para gestionar la creación de una máquina Ubuntu 24.04 (imagen `ubuntu/jammy64`).
+Se utilizó un `Vagrantfile` para definir la infraestructura, que posteriormente es desplegada mediante `vagrant up`.
 
-📂 **Archivo**:
+**Contenido del `Vagrantfile`:**
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/jammy64"  # Ubuntu 22.04/24.04
+  config.vm.box = "ubuntu/jammy64" # Ubuntu 24.04
   config.vm.hostname = "ubuntu2204"
-
   config.vm.network "private_network", ip: "192.168.56.10"
-
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 2048
     vb.cpus = 2
@@ -28,20 +47,40 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-📸 **Captura de la ejecución **\`\`** y VM creada:**
+**Ejecución del despliegue:**
 
-&#x20;&#x20;
+```bash
+vagrant up
+```
+
+📸 **Captura de `vagrant up`:**
+
+
+![vagrant up_1](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/1.%20vagrant%20up.png)
+![vagrant up_2](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/2.%20vagrant%20up_2.png)
+
+✅ Vagrant crea y arranca correctamente la máquina virtual Ubuntu 24.04 en VirtualBox.
+
+Posteriormente, verificaremos que la máquina virtual se haya creado correctamente en **VirtualBox**.
+
+📸 **Captura de la máquina corriendo en VirtualBox:**
+
+
+![maquina corriendo](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/3.%20m%C3%A1quina%20virutal.png)
+✅ La máquina aparece en VirtualBox como "corriendo" y con los parámetros asignados.
 
 ---
 
-## 3.2. Configurar una máquina virtual Ubuntu 24.04 en Virtualbox mediante Ansible
+## 🎯 3.2. Configurar una máquina virtual Ubuntu 24.04 en VirtualBox mediante Ansible
 
-### 🔧 Objetivo
+### Fichero de inventario `inventory.ini`:
 
-* Actualizar el sistema (update & upgrade)
-* Instalar el servicio Apache automáticamente
+```ini
+[ubuntu]
+192.168.56.10 ansible_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key ansible_connection=ssh
+```
 
-📂 \*\*Archivo \*\*\`\`:
+### Playbook `playbook_update_apache.yml`:
 
 ```yaml
 ---
@@ -60,26 +99,24 @@ end
         state: present
 ```
 
-📂 \*\*Archivo \*\*\`\`:
+**Ejecución del playbook:**
 
-```ini
-[ubuntu]
-192.168.56.10 ansible_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key ansible_connection=ssh
+```bash
+ansible-playbook -i inventory.ini playbook_update_apache.yml
 ```
 
-📸 **Ejecución y resultado del playbook:**
+📸 **Captura de `update` & `upgrade` del sistema e instalación de Apache:**
+
+
+![update apache](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/4.%20playbook_update_apache.png)
+
+✅ Se realiza `update`, `upgrade` e instalación del servicio `apache2` correctamente.
 
 ---
 
-## 3.3. Configurar una máquina virtual Ubuntu 24.04 en Virtualbox mediante Ansible
+## 🎯 3.3. Crear un `index.html`, reiniciar el servicio y verificarlo mediante `curl`
 
-### 🎯 Objetivo
-
-* Crear un `index.html` con el contenido "Ansible rocks"
-* Reiniciar Apache
-* Verificar con `curl` que se muestre el contenido correctamente
-
-📂 \*\*Archivo \*\*\`\`:
+### Playbook `playbook_index_html.yml`
 
 ```yaml
 ---
@@ -106,20 +143,43 @@ end
         var: resultado.stdout
 ```
 
-📸 **Resultado esperado (respuesta del **\`\`**)**:
+**Ejecución del playbook:**
+
+```bash
+ansible-playbook -i inventory.ini playbook_index_html.yml
+```
+
+📸 **Captura de la creación de un indice que contenga `Ansible rocks`:**
+
+
+![ansible rocks](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/3.png)
+
+✅ Se despliega correctamente la página web, reinicia Apache y `curl` muestra "Ansible rocks" como resultado.
 
 ---
 
 ## ✅ Conclusión
 
-Con esta práctica se ha logrado automatizar completamente la provisión y configuración de una máquina virtual utilizando herramientas de infraestructura como código:
+Esta práctica ha demostrado la capacidad de aprovisionar y configurar una infraestructura desde cero mediante herramientas de automatización como **Terraform (vía Vagrant)** y **Ansible**. Se han cumplido todos los requisitos de:
 
-* ✅ **Terraform** + **Vagrant** para levantar la máquina
-* ✅ **Ansible** para la configuración automatizada del sistema operativo y del servidor web
+* Creación automatizada de máquina virtual.
+* Instalación de Apache.
+* Configuración de contenido web y validación de su funcionamiento.
 
-### ✔️ Checklist de entrega:
+Las capturas de pantalla incluidas en este documento sirven como evidencia de la correcta ejecución de cada una de las etapas de la actividad.
 
-*
+---
+
+## 📂 Archivos del proyecto
+
+* `Vagrantfile`: definición de infraestructura para Terraform (vía Vagrant)
+* `inventory.ini`: inventario estático de Ansible
+* `playbook_update_apache.yml`: actualización del sistema e instalación de Apache
+* `playbook_index_html.yml`: despliegue de contenido web y validación final
+* Capturas: disponibles en el directorio `assets/` del repositorio
+
+---
+
 
 ---
 
