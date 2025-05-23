@@ -182,5 +182,5 @@ Las capturas de pantalla incluidas en este documento sirven como evidencia de la
 **[assets](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_2/assets)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 **[Vagrantfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/Vagrantfile)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 **[inventory-ini](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/inventory.ini)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-**[playbook_index_html.yml)](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/playbook_index_html.yml)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[playbook_index_html.yml](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/playbook_index_html.yml)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 **[playbook_update_apache.yml](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/playbook_update_apache.yml)**
