@@ -12,7 +12,7 @@ Se trata de la **RA5.2**, centrada en la provisión de infraestructura y configu
 
 Se ha utilizado **Vagrant** como proveedor dentro de **Terraform** para gestionar la creación de una máquina Ubuntu 24.04 (imagen `ubuntu/jammy64`).
 
-📂 \*\*Archivo \*\*\`\`:
+📂 **Archivo**:
 
 ```ruby
 Vagrant.configure("2") do |config|
