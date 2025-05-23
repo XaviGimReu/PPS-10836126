@@ -70,7 +70,8 @@ Posteriormente, verificaremos que la máquina virtual se haya creado correctamen
 
 
 ![maquina corriendo](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/3.%20m%C3%A1quina%20virutal.png)
-✅ La máquina aparece en VirtualBox como "corriendo" y con los parámetros asignados.
+
+✅ La máquina aparece en **VirtualBox** como "Corriendo" y con los parámetros asignados.
 
 ---
 
