@@ -15,6 +15,7 @@ El objetivo principal es demostrar la capacidad de automatizar:
 * La **verificación del despliegue** mediante un `curl`.
 
 
+
 ## 📂 Archivos del proyecto
 
 * `Vagrantfile`: definición de infraestructura para Terraform (vía Vagrant)
