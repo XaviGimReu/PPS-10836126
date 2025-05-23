@@ -34,7 +34,7 @@ El objetivo principal es demostrar la capacidad de automatizar:
 
 En este caso, se utilizó un `Vagrantfile` para definir la infraestructura, esto se debe a que **Terraform** no fue del todo compatible con el sistema ni la versión 24.04 de Ubuntu requerida.
 
-Por esto, emplearemos la herramienta **Vagrant**
+Por esto, emplearemos la herramienta **Vagrant** para crear una máquina virtual **Ubuntu 22.04**.
 
 **Contenido del `Vagrantfile`:**
 
@@ -62,7 +62,7 @@ vagrant up
 ![vagrant up_1](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/1.%20vagrant%20up.png)
 ![vagrant up_2](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/2.%20vagrant%20up_2.png)
 
-✅ Vagrant crea y arranca correctamente la máquina virtual Ubuntu 24.04 en VirtualBox.
+✅ **Vagrant** crea y arranca correctamente la máquina virtual Ubuntu 22.04 en VirtualBox.
 
 Posteriormente, verificaremos que la máquina virtual se haya creado correctamente en **VirtualBox**.
 
