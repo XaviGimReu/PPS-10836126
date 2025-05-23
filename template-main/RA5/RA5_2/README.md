@@ -162,6 +162,7 @@ ansible-playbook -i inventory.ini playbook_index_html.yml
 
 ---
 
+
 ## ✅ Conclusión
 
 Esta práctica ha demostrado la capacidad de aprovisionar y configurar una infraestructura desde cero mediante herramientas de automatización como **Terraform (vía Vagrant)** y **Ansible**. Se han cumplido todos los requisitos de:
@@ -171,18 +172,6 @@ Esta práctica ha demostrado la capacidad de aprovisionar y configurar una infra
 * Configuración de contenido web y validación de su funcionamiento.
 
 Las capturas de pantalla incluidas en este documento sirven como evidencia de la correcta ejecución de cada una de las etapas de la actividad.
-
----
-
-## 📂 Archivos del proyecto
-
-* `Vagrantfile`: definición de infraestructura para Terraform (vía Vagrant)
-* `inventory.ini`: inventario estático de Ansible
-* `playbook_update_apache.yml`: actualización del sistema e instalación de Apache
-* `playbook_index_html.yml`: despliegue de contenido web y validación final
-* Capturas: disponibles en el directorio `assets/` del repositorio
-
----
 
 
 ---
