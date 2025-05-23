@@ -156,7 +156,7 @@ ansible-playbook -i inventory.ini playbook_index_html.yml
 📸 **Captura de la creación de un indice que contenga `Ansible rocks`:**
 
 
-![ansible rocks](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/3.png)
+![ansible rocks](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/assets/5.%20playbook_index_html.png)
 
 ✅ Se despliega correctamente la página web, reinicia Apache y `curl` muestra "Ansible rocks" como resultado.
 
