@@ -32,7 +32,9 @@ El objetivo principal es demostrar la capacidad de automatizar:
 
 ## 🎯 3.1. Provisionar una máquina virtual Ubuntu 24.04 en Virtualbox mediante Terraform
 
-Se utilizó un `Vagrantfile` para definir la infraestructura, que posteriormente es desplegada mediante `vagrant up`.
+En este caso, se utilizó un `Vagrantfile` para definir la infraestructura, esto se debe a que **Terraform** no fue del todo compatible con el sistema ni la versión 24.04 de Ubuntu requerida.
+
+Por esto, emplearemos la herramienta **Vagrant**
 
 **Contenido del `Vagrantfile`:**
 
