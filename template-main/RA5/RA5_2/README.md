@@ -168,7 +168,9 @@ ansible-playbook -i inventory.ini playbook_index_html.yml
 Esta práctica ha demostrado la capacidad de aprovisionar y configurar una infraestructura desde cero mediante herramientas de automatización como **Terraform (vía Vagrant)** y **Ansible**. Se han cumplido todos los requisitos de:
 
 * Creación automatizada de máquina virtual.
+  
 * Instalación de Apache.
+  
 * Configuración de contenido web y validación de su funcionamiento.
 
 Las capturas de pantalla incluidas en este documento sirven como evidencia de la correcta ejecución de cada una de las etapas de la actividad.
