@@ -1,4 +1,4 @@
-# 🌱 Terraform + Ansible: Provisión y Configuración Automática
+ # 🌱 Terraform + Ansible: Provisión y Configuración Automática
 
 ## 📖 Introducción
 
@@ -123,6 +123,9 @@ Con esta práctica se ha logrado automatizar completamente la provisión y confi
 
 ---
 
-## 📦 Repositorio GitHub
-
-🔗 [https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5\_2](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_2)
+## 📬 Referencias
+**[assets](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_2/assets)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[Vagrantfile](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/Vagrantfile)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[inventory-ini](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/inventory.ini)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[playbook_index_html.yml)](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/playbook_index_html.yml)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+**[playbook_update_apache.yml](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_2/playbook_update_apache.yml)**
