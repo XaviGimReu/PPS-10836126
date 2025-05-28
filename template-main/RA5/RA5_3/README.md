@@ -7,6 +7,7 @@ En esta práctica se ha desarrollado un stack de **monitorización** utilizando 
 La actividad está dividida en dos fases:
 
 * ✅ Despliegue de un stack local usando `docker-compose`.
+
 * ✅ Monitorización remota de un servidor Ubuntu real desde un cliente Ubuntu 24.10.
 
 
@@ -15,6 +16,7 @@ La actividad está dividida en dos fases:
 📂 **Monitorización con Prometheus + Grafana:**
 
 * 🔹 **Stack Docker Compose** – 🐳 *Prometheus, Grafana, cAdvisor, Alertmanager, Node Exporter, Node App*
+
 * 🔹 **Monitorización Remota** – 📡 *Servidor Ubuntu con Prometheus y Node Exporter, Cliente con Grafana*
 
 ---
@@ -37,7 +39,11 @@ La actividad está dividida en dos fases:
 Se configuró el archivo `prometheus.yml` para definir el job `prometheus` y gestionar la integración con otros servicios del stack:
 
 📸 **Archivo prometheus.yml:**
-![prometheus\_config](assets/1.png)
+
+
+![prometheus.yml](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/1.%20prometheus.yml%20.png)
+
+🔧 Configuración del `prometheus.yml` donde se define el job `prometheus` y los parámetros básicos de scraping.
 
 ---
 
@@ -51,10 +57,24 @@ docker compose up -d
 ```
 
 📸 **Salida del build y arranque de contenedores:**
-![docker\_compose\_build](assets/2.png)
 
-📸 **Servicios en estado Running:**
-![docker\_services\_up](assets/2.png)
+
+![docker_compose](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/2.%20docker%20compose.png)
+
+✅ Docker construye la imagen y levanta los contenedores correctamente sin errores.
+
+Posteriormente, comprobaremos que todos los servicios estén funcionando correctamente:
+
+📸 **Prometheus:**
+
+
+![prometheus](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/3.%20prometheus.png)
+
+![cAdvisor](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/4.%20cAdvisor.png)
+
+![grafana](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/5.%20Grafana.png)
+
+🟢 Todos los servicios aparecen en estado `Running` incluyendo **Prometheus**, **Grafana** y **Node Exporter**.
 
 ---
 
