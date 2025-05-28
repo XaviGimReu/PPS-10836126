@@ -239,13 +239,8 @@ Comprobaremos el funcionamiento de la monitorización de **Grafana** seleccionan
 
 Se ha implementado con éxito un sistema de monitorización completo y funcional usando Prometheus y Grafana. El entorno dockerizado ha permitido validar la arquitectura y posteriormente se ha logrado monitorizar un servidor real de forma remota y segura desde el cliente.
 
-> 🧹 Listo para ser extendido con reglas de alertas, integración con Loki y visualización de logs, o ampliación con servicios adicionales.
-
 ---
 
 ## 📬 Referencias
 
-* [Repositorio base del stack Prometheus-Grafana](https://github.com/dinesh24murali/example_repo/tree/main/prometheus_grafana_example)
-* [Artículo de introducción a Prometheus y Grafana](https://medium.com/@dineshmurali/introduction-to-monitoring-with-prometheus-grafana-ea338d93b2d9)
-* [Dashboard oficial Node Exporter Full (ID: 1860)](https://grafana.com/grafana/dashboards/1860)
-
+* [assets](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_3/assets)
