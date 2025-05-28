@@ -63,7 +63,9 @@ docker compose up -d
 
 ✅ Docker construye la imagen y levanta los contenedores correctamente sin errores.
 
-Posteriormente, comprobaremos que todos los servicios estén funcionando correctamente:
+### 📊 Validación de servicios
+
+Comprobaremos que todos los servicios estén funcionando correctamente
 
 📸 **Prometheus:**
 
@@ -77,25 +79,13 @@ Posteriormente, comprobaremos que todos los servicios estén funcionando correct
 ![cAdvisor](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/4.%20cAdvisor.png)
 
 
-📸 **grafana:**
+📸 **Grafana:**
 
 
 ![grafana](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/5.%20Grafana.png)
 
 🟢 Todos los servicios aparecen en estado `Running` incluyendo **Prometheus**, **Grafana** y **Node Exporter**.
 
----
-
-### 📊 Validación de servicios
-
-📸 **Consulta PromQL en Prometheus:**
-![prometheus\_query](assets/3.png)
-
-📸 **Acceso a cAdvisor en localhost:8080:**
-![cadvisor](assets/4.png)
-
-📸 **Interfaz de inicio de Grafana (localhost:3000):**
-![grafana\_inicio](assets/5.png)
 
 ---
 
