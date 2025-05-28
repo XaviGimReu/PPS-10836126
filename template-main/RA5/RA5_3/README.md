@@ -212,7 +212,7 @@ Una vez creado correctamente el `datasource` en **Grafana**, importaremos un `da
 
 ---
 
-🖥️📔 **Visualización de paneles:**
+### 📔 **Visualización de paneles:**
 
 Comprobaremos el funcionamiento de la monitorización de **Grafana** seleccionando diferentes parámetros
 
