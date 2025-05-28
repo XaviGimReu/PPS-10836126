@@ -9,7 +9,6 @@ La actividad está dividida en dos fases:
 * ✅ Despliegue de un stack local usando `docker-compose`.
 * ✅ Monitorización remota de un servidor Ubuntu real desde un cliente Ubuntu 24.10.
 
----
 
 ## 📌 Prácticas Implementadas
 
