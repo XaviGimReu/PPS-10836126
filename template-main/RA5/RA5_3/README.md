@@ -23,11 +23,6 @@ La actividad está dividida en dos fases:
 
 ## 🔹 3.1. Validación del Stack Dockerizado
 
-Repositorio base utilizado:
-
-* 📎 [Repositorio GitHub de ejemplo](https://github.com/dinesh24murali/example_repo/tree/main/prometheus_grafana_example)
-* 📎 [Artículo de referencia](https://medium.com/@dineshmurali/introduction-to-monitoring-with-prometheus-grafana-ea338d93b2d9)
-
 ### ✅ Servicios incluidos:
 
 * Prometheus
