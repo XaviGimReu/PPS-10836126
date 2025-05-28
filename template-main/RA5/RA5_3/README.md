@@ -86,58 +86,133 @@ Comprobaremos que todos los servicios estén funcionando correctamente
 
 🟢 Todos los servicios aparecen en estado `Running` incluyendo **Prometheus**, **Grafana** y **Node Exporter**.
 
-
 ---
 
 ## 🔹 3.2. Monitorización de Infraestructura Real
 
-### 🖥️ Servidor (Ubuntu Server - 192.168.1.74)
+### 💻 Servidor (Ubuntu Server - 192.168.1.74)
 
-* Instalación manual de Prometheus y Node Exporter.
-* Configuración de `prometheus.yml` para apuntar a `node_exporter`:
+La primera configuración a realizar en nuestro serviddor **Ubuntu Server 24.04** será instalar `Prometheus` mediante los siguientes comandos:
 
-  ```yaml
-  scrape_configs:
-    - job_name: 'node_exporter'
-      static_configs:
-        - targets: ['localhost:9100']
-  ```
-* Ajuste de Prometheus para escuchar en todas las interfaces:
+```bash
+sudo useradd --no-create-home --shell /bin/false prometheus
+sudo mkdir /etc/prometheus /var/lib/prometheus
+wget https://github.com/prometheus/prometheus/releases/download/v2.52.0/prometheus-2.52.0.linux-amd64.tar.gz
+tar -xvzf prometheus-*.tar.gz
+sudo cp prometheus-*/prometheus /usr/local/bin/
+```
 
-  ```bash
-  --web.listen-address="0.0.0.0:9090"
-  ```
-* Habilitación de puertos:
+📸 **Instalación de Prometheus:**
 
-  ```bash
-  sudo ufw allow 9090/tcp
-  sudo ufw allow 9100/tcp
-  ```
 
-📸 (Agregar capturas de: `systemctl status`, `curl`, `prometheus.yml`)
+![instalacion_prometheus](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/6.%20instalaci%C3%B3n%20prometheus.png)
+
+📉 Se descarga e instala Prometheus en el servidor, extrayendo el binario desde el tarball oficial y preparándolo para su ejecución.
+
+
+Posteriormente, instalaremos `Node Exporter`, un componente de `Prometheus` que nos permitirá exponer las métricas del SO:
+
+```bash
+wget https://github.com/prometheus/node_exporter/releases/download/v1.8.1/node_exporter-1.8.1.linux-amd64.tar.gz
+tar -xvzf node_exporter-*.tar.gz
+sudo cp node_exporter-*/node_exporter /usr/local/bin/
+```
+
+📸 **Instalación de Node Exporter:**
+
+
+![instalacion_node_exporter](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/7.%20instalaci%C3%B3n%20node_exporter.png)
+
+🔧 Instalación manual de `node_exporter` en el servidor Ubuntu para exportar métricas del sistema.
+
+
+Una vez instalados los servicios, configuraremos `Node Exporter` de la siguiente manera (`/etc/systemd/system/node_exporter.service`):
+
+```mysql
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=prometheus
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=default.target
+```
+
+📸 **Configuración del servicio Node Exporter `(systemd)`:**
+
+
+![configuracion_node_exporter](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/8.%20configuraci%C3%B3n%20node_exporter.png)
+
+🔢 Se crea una unidad de servicio systemd para ejecutar Node Exporter al inicio del sistema.
+
+
+Por último, comprobaremos el **estado del servicio** `Node Exporter`:
+
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl start node_exporter
+sudo systemctl enable node_exporter
+sudo systemctl status node_exporter
+```
+
+📸 **Estado del servicio Node Exporter:**
+
+
+![estado_node_exporter](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/9.%20estado%20de%20los%20servicios.png)
+
+🟢 El servicio aparece como `active (running)` y habilitado para arrancar de forma automática.
 
 ---
 
-### 🖥️ Cliente (Ubuntu 24.10 - Anfitrión)
+### 💻 Cliente (Linux Mint - 192.168.1.X)
 
-* Se utilizó Grafana desde Docker Compose (ya desplegado).
-* Se añadió el servidor Prometheus remoto como datasource:
+📸 **Configuración de datasource Prometheus en Grafana:**
 
-  * URL: `http://192.168.1.74:9090`
-* Se importó el dashboard oficial de Node Exporter (ID: `1860`).
+![datasource\_prometheus](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/10.%20vinculaci%C3%B3n%20de%20prometheus%20con%20grafana.png)
 
-📸 (Agregar captura de: configuración datasource, dashboard cargado con datos)
+🔌 Se establece la conexión hacia la IP del servidor Prometheus (`192.168.1.74:9090`).
+
+---
+
+📸 **Confirmación API:**
+
+![api\_ok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/11.%20API.png)
+
+📅 Grafana logra conectarse exitosamente con la API de Prometheus y puede comenzar a importar métricas.
+
+---
+
+📸 **Importación de Dashboard Prometheus:**
+
+![import\_dashboard](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/12.%20importaci%C3%B3n%20prometheus%20dashborad.png)
+
+📅 Se importa desde Grafana.com el dashboard oficial de Prometheus (por `rfmoz`) para su visualización.
+
+---
+
+📸 **Visualización de paneles:**
+
+![dashboard\_1](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/13.%20prometheus%20dashboard_1.png)
+
+📊 Panel de tipo `Time series` con la métrica `process_cpu_seconds_total` mostrando el uso de CPU del sistema.
+
+![dashboard\_2](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/14.%20prometheus%20dashboard_2.png)
+
+📊 Panel de tipo `Pie chart` con la métrica `process_virtual_memory_bytes` para comparar el uso de memoria entre servicios.
 
 ---
 
 ### 🌐 Comprobaciones de red
 
-* Verificación de accesibilidad de puertos desde el cliente:
+```bash
+curl http://192.168.1.74:9100/metrics
+curl http://192.168.1.74:9090/targets
+```
 
-  ```bash
-  curl http://192.168.1.74:9100/metrics
-  curl http://192.168.1.74:9090/targets
-  ```
+> ✅ Confirmación de que el cliente accede correctamente a las métricas exportadas por el servidor.
 
 ---
 
@@ -145,4 +220,13 @@ Comprobaremos que todos los servicios estén funcionando correctamente
 
 Se ha implementado con éxito un sistema de monitorización completo y funcional usando Prometheus y Grafana. El entorno dockerizado ha permitido validar la arquitectura y posteriormente se ha logrado monitorizar un servidor real de forma remota y segura desde el cliente.
 
-> 🧩 Listo para ser extendido con reglas de alertas, integración con Loki y visualización de logs, o ampliación con servicios adicionales.
+> 🧹 Listo para ser extendido con reglas de alertas, integración con Loki y visualización de logs, o ampliación con servicios adicionales.
+
+---
+
+## 📬 Referencias
+
+* [Repositorio base del stack Prometheus-Grafana](https://github.com/dinesh24murali/example_repo/tree/main/prometheus_grafana_example)
+* [Artículo de introducción a Prometheus y Grafana](https://medium.com/@dineshmurali/introduction-to-monitoring-with-prometheus-grafana-ea338d93b2d9)
+* [Dashboard oficial Node Exporter Full (ID: 1860)](https://grafana.com/grafana/dashboards/1860)
+
