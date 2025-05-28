@@ -63,6 +63,8 @@ docker compose up -d
 
 ✅ Docker construye la imagen y levanta los contenedores correctamente sin errores.
 
+---
+
 ### 📊 Validación de servicios
 
 Comprobaremos que todos los servicios estén funcionando correctamente
@@ -167,54 +169,71 @@ sudo systemctl status node_exporter
 
 ---
 
-### 💻 Cliente (Linux Mint - 192.168.1.X)
+### 💻 Cliente (Linux Mint - 192.168.1.57)
 
-📸 **Configuración de datasource Prometheus en Grafana:**
+Al igual que en el **Ubuntu Server 24.04**, instalaremos `Prometheus` en nuestro equipo cliente.
 
-![datasource\_prometheus](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/10.%20vinculaci%C3%B3n%20de%20prometheus%20con%20grafana.png)
+Posteriormente, instalaremos `Grafana` en nuestro equipo cliente mediante los siguientes comandos:
+
+```bash
+sudo apt install -y software-properties-common
+sudo add-apt-repository "deb https://apt.grafana.com stable main"
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+sudo apt update
+```
+
+Cuando acabemos este proceso, iniciaremos `Grafana` en nuestro navegador y crearemos un nuevo `datasource` para añadir a nuestro **Prometheus** para poder monitorizarlo.
+
+📸 **Configuración de `datasource` Prometheus en Grafana:**
+
+![datasource_prometheus](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/10.%20vinculaci%C3%B3n%20de%20prometheus%20con%20grafana.png)
 
 🔌 Se establece la conexión hacia la IP del servidor Prometheus (`192.168.1.74:9090`).
 
----
+
+Cuando creemos el `datasource`, sabremos si lo hemos hecho correctamente al ver la verificación de la `API`.
+
 
 📸 **Confirmación API:**
 
-![api\_ok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/11.%20API.png)
+![api_ok](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/11.%20API.png)
 
 📅 Grafana logra conectarse exitosamente con la API de Prometheus y puede comenzar a importar métricas.
 
----
+
+Una vez creado correctamente el `datasource` en **Grafana**, importaremos un `dashboard` para poder ver todas las estadísticas de nuestro **Prometheus**.
 
 📸 **Importación de Dashboard Prometheus:**
 
-![import\_dashboard](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/12.%20importaci%C3%B3n%20prometheus%20dashborad.png)
+
+![import_dashboard](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/12.%20importaci%C3%B3n%20prometheus%20dashborad.png)
 
 📅 Se importa desde Grafana.com el dashboard oficial de Prometheus (por `rfmoz`) para su visualización.
 
 ---
 
-📸 **Visualización de paneles:**
+🖥️📔 **Visualización de paneles:**
 
-![dashboard\_1](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/13.%20prometheus%20dashboard_1.png)
+Comprobaremos el funcionamiento de la monitorización de **Grafana** seleccionando diferentes parámetros
+
+📸 **Monitorización de la CPU:**
+
+
+![dashboard_1](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/13.%20prometheus%20dashboard_1.png)
 
 📊 Panel de tipo `Time series` con la métrica `process_cpu_seconds_total` mostrando el uso de CPU del sistema.
 
-![dashboard\_2](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/14.%20prometheus%20dashboard_2.png)
+
+📸 **Monitorización de la memoria RAM:**
+
+
+![dashboard_2](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_3/assets/14.%20prometheus%20dashboard_2.png)
 
 📊 Panel de tipo `Pie chart` con la métrica `process_virtual_memory_bytes` para comparar el uso de memoria entre servicios.
 
----
-
-### 🌐 Comprobaciones de red
-
-```bash
-curl http://192.168.1.74:9100/metrics
-curl http://192.168.1.74:9090/targets
-```
-
-> ✅ Confirmación de que el cliente accede correctamente a las métricas exportadas por el servidor.
 
 ---
+
 
 ## ✅ Conclusión
 
