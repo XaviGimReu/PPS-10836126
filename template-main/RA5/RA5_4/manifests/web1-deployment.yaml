@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.36.0 (ae2a39403)
+  labels:
+    io.kompose.service: web1
+  name: web1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: web1
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.36.0 (ae2a39403)
+      labels:
+        io.kompose.service: web1
+    spec:
+      containers:
+        - image: nginx
+          name: web1
+      restartPolicy: Always
