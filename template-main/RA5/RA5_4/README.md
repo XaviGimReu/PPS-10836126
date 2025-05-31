@@ -22,7 +22,6 @@ La actividad está enfocada en la validación del entorno Kubernetes mediante tr
 * 🔹 **Clúster HA** – 🧩 Instalación de K3s con `--cluster-init` y configuración para admitir múltiples nodos.
   
 * 🔹 **Kompose + Docker Compose** – 🐳 Conversión de `docker-compose.yml` a manifiestos Kubernetes y despliegue en K3s.
-  
 
 ---
 
@@ -40,10 +39,12 @@ La instalación se realiza mediante un script oficial:
 curl -sfL https://get.k3s.io | sh -
 ```
 
-Este comando descarga e instala `k3s`, junto con `kubectl`, el cliente de línea de comandos para Kubernetes.
+📸 **Instalación del clúster K3s en modo single-node:**
 
-📸 **Evidencia:**
+
 ![instalacion_k3s](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/1.%20Instalaci%C3%B3n%20k3s.png)
+
+🛠 Se lanza el script oficial de instalación paraconfigurar el nodo maestro.
 
 ---
 
@@ -75,8 +76,9 @@ spec:
         - containerPort: 80
 ```
 
-📸 **Evidencia:**
+📸 **Definición y despliegue del Deployment de nginx:**
 ![deploy\_nginx](assets/2.%20Configuración%20y%20lanzamient%20de%20nginx.png)
+📦 Se define un `Deployment` con 2 réplicas del contenedor `nginx`.
 
 ---
 
@@ -88,8 +90,9 @@ Se comprueba que las dos réplicas de nginx estén en estado `Running`:
 kubectl get pods
 ```
 
-📸 **Evidencia:**
+📸 **Comprobación de que los pods de nginx están corriendo:**
 ![verificacion\_nginx](assets/3.%20Verificación%20de%20lanzamiento.png)
+🔎 Se valida visualmente el estado de los pods desplegados.
 
 ---
 
@@ -102,10 +105,13 @@ curl -sS https://webinstall.dev/k9s | bash
 k9s
 ```
 
-📸 **Evidencias:**
+📸 **Instalación de la herramienta K9s:**
+![instalacion\_k9s](assets/4.%20Instalación%20k9s.png)
+🔧 Se descarga e instala la utilidad de administración K9s.
 
-* ![instalacion\_k9s](assets/4.%20Instalación%20k9s.png)
-* ![lanzamiento\_k9s](assets/5.%20Lanzamiento%20k9s.png)
+📸 **Vista del clúster desde la interfaz de K9s:**
+![lanzamiento\_k9s](assets/5.%20Lanzamiento%20k9s.png)
+🖥️ Visualización del entorno Kubernetes usando K9s.
 
 ---
 
@@ -119,8 +125,9 @@ Este apartado busca convertir el clúster en un entorno **altamente disponible**
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --cluster-init" sh -
 ```
 
-📸 **Evidencia:**
+📸 **Inicio del clúster K3s en modo HA:**
 ![instalacion\_ha](assets/6.%20Instalación%20k3s%20\(HA\).png)
+🔁 Se activa el modo `--cluster-init` para admitir múltiples nodos.
 
 ---
 
@@ -132,8 +139,9 @@ Este token es necesario para que los nuevos nodos se unan al clúster:
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 
-📸 **Evidencia:**
+📸 **Token generado por el nodo principal del clúster:**
 ![token\_ha](assets/7.%20Token%20del%20nodo1.png)
+🔐 Clave compartida para la autenticación entre nodos.
 
 ---
 
@@ -147,8 +155,9 @@ K3S_URL=https://192.168.1.49:6443 \
 K3S_TOKEN=<TOKEN> sh -
 ```
 
-📸 **Evidencia:**
+📸 **Simulación de unión de un nodo agente al clúster:**
 ![union\_nodo](assets/8\(0\).%20Union%20otro%20nodo.png)
+🧩 Se documenta el comando utilizado para integrar nodos adicionales.
 
 ---
 
@@ -160,8 +169,9 @@ El mismo manifiesto de despliegue se aplica en el clúster HA:
 kubectl apply -f ha_nginx_deployment.yml
 ```
 
-📸 **Evidencia:**
+📸 **Aplicación del Deployment en el clúster HA:**
 ![deploy\_ha](assets/8.%20Despliegue%20ha_nginx_deployment.yml.png)
+📄 Se despliega nginx en alta disponibilidad con 2 réplicas.
 
 ---
 
@@ -184,8 +194,9 @@ services:
       - "8080:80"
 ```
 
-📸 **Evidencia:**
+📸 **Definición del stack docker-compose a convertir:**
 ![compose\_file](assets/9.%20docker-compose.yml.png)
+📑 Contiene 2 servicios nginx y un balanceador expuesto en el puerto 8080.
 
 ---
 
@@ -197,8 +208,9 @@ kompose convert
 
 Esto genera los archivos YAML necesarios para cada servicio y su deployment correspondiente.
 
-📸 **Evidencia:**
+📸 **Conversión automática de docker-compose a Kubernetes:**
 ![kompose\_convert](assets/10.%20Despliegue%20de%20docker-compose.png)
+⚙️ Kompose crea los `Deployment` y `Service` de cada contenedor definido.
 
 ---
 
@@ -227,8 +239,9 @@ Y se accede vía navegador:
 http://192.168.1.49:30080
 ```
 
-📸 **Evidencia:**
+📸 **Acceso y verificación del balanceador desde navegador:**
 ![verificacion\_compose](assets/11.%20Comprobación%20del%20despliegue.png)
+🌐 Se valida la respuesta HTTP a través del puerto expuesto 30080.
 
 ---
 
