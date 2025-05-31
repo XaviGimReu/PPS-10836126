@@ -131,6 +131,7 @@ k9s
 
 ---
 
+
 ## 🔹 5.2 Instalación y validación de K3s en modo HA
 
 Este apartado busca convertir el clúster en un entorno **altamente disponible**, habilitando la opción `--cluster-init` para permitir la incorporación de nodos adicionales.
@@ -142,10 +143,13 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --cluster-init" sh -
 ```
 
 📸 **Inicio del clúster K3s en modo HA:**
-![instalacion\_ha](assets/6.%20Instalación%20k3s%20\(HA\).png)
+
+
+![instalacion_ha](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/6.%20Instalaci%C3%B3n%20k3s%20(HA).png)
+
 🔁 Se activa el modo `--cluster-init` para admitir múltiples nodos.
 
----
+
 
 ### 🔑 Obtención del token del nodo líder
 
@@ -156,14 +160,17 @@ sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 
 📸 **Token generado por el nodo principal del clúster:**
-![token\_ha](assets/7.%20Token%20del%20nodo1.png)
+
+
+![token_ha](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/7.%20Token%20del%20nodo1.png)
+
 🔐 Clave compartida para la autenticación entre nodos.
 
----
+
 
 ### 🌐 Simulación de unión de un nuevo nodo
 
-Se documenta el comando de unión:
+En caso de que queramos conectar más de un nodo, este es el comando de unión:
 
 ```bash
 curl -sfL https://get.k3s.io | \
@@ -171,13 +178,33 @@ K3S_URL=https://192.168.1.49:6443 \
 K3S_TOKEN=<TOKEN> sh -
 ```
 
-📸 **Simulación de unión de un nodo agente al clúster:**
-![union\_nodo](assets/8\(0\).%20Union%20otro%20nodo.png)
-🧩 Se documenta el comando utilizado para integrar nodos adicionales.
 
----
 
 ### 📦 Despliegue del servicio nginx (modo HA)
+
+📄 **Archivo `ha_nginx_deployment.yml`:**
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
 
 El mismo manifiesto de despliegue se aplica en el clúster HA:
 
@@ -186,7 +213,10 @@ kubectl apply -f ha_nginx_deployment.yml
 ```
 
 📸 **Aplicación del Deployment en el clúster HA:**
-![deploy\_ha](assets/8.%20Despliegue%20ha_nginx_deployment.yml.png)
+
+
+![deploy_ha](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/8.%20Despliegue%20ha_nginx_deployment.yml.png)
+
 📄 Se despliega nginx en alta disponibilidad con 2 réplicas.
 
 ---
