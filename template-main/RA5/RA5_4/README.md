@@ -77,10 +77,13 @@ spec:
 ```
 
 📸 **Definición y despliegue del Deployment de nginx:**
-![deploy\_nginx](assets/2.%20Configuración%20y%20lanzamient%20de%20nginx.png)
+
+
+![deploy_nginx](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/2.%20Configuraci%C3%B3n%20y%20lanzamient%20de%20nginx.png)
+
 📦 Se define un `Deployment` con 2 réplicas del contenedor `nginx`.
 
----
+
 
 ### 🔍 Verificación de los pods
 
@@ -88,13 +91,17 @@ Se comprueba que las dos réplicas de nginx estén en estado `Running`:
 
 ```bash
 kubectl get pods
+kubectl get deployments
 ```
 
 📸 **Comprobación de que los pods de nginx están corriendo:**
-![verificacion\_nginx](assets/3.%20Verificación%20de%20lanzamiento.png)
+
+
+![verificacion_nginx](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/3.%20Verificaci%C3%B3n%20de%20lanzamiento.png)
+
 🔎 Se valida visualmente el estado de los pods desplegados.
 
----
+
 
 ### 📥 Instalación y ejecución de K9s
 
@@ -106,11 +113,22 @@ k9s
 ```
 
 📸 **Instalación de la herramienta K9s:**
-![instalacion\_k9s](assets/4.%20Instalación%20k9s.png)
+![instalacion_k9s](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/4.%20Instalaci%C3%B3n%20k9s.png)
 🔧 Se descarga e instala la utilidad de administración K9s.
 
+
+Desplegamos `k9s`:
+
+```bash
+curl -sS https://webinstall.dev/k9s | bash
+k9s
+```
+
 📸 **Vista del clúster desde la interfaz de K9s:**
-![lanzamiento\_k9s](assets/5.%20Lanzamiento%20k9s.png)
+
+
+![lanzamiento_k9s](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/5.%20Lanzamiento%20k9s.png)
+
 🖥️ Visualización del entorno Kubernetes usando K9s.
 
 ---
