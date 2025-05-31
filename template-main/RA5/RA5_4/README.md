@@ -307,8 +307,6 @@ Este entorno es útil como base para arquitecturas más complejas, integraciones
 
 ---
 
-## 📚 Referencias
-
 ## 📬 Referencias
 **[assets](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_4/assets)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
 **[manifests](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_4/manifests)**
