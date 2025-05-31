@@ -277,6 +277,8 @@ kubectl apply -f balanceador-service.yaml
 Y comprobaremos que podemos conectarnos a él:
 
 ```
+kubectl get pods
+kubectl get svc
 curl http://192.168.1.49:30080
 ```
 
