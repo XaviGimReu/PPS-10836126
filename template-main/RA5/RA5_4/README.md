@@ -7,18 +7,22 @@ En esta práctica se ha desarrollado una arquitectura de despliegue y administra
 La actividad está enfocada en la validación del entorno Kubernetes mediante tres enfoques clave:
 
 * 🟢 Despliegue inicial en **modo single-node** con un servicio de nginx replicado.
+  
 * 🔄 Escalado del entorno a un clúster **HA (High Availability)**.
+  
 * 🧱 Despliegue a partir de un archivo `docker-compose` convertido a recursos Kubernetes mediante `Kompose`.
 
----
 
 ## 📌 Prácticas Implementadas
 
 📂 **Despliegue y Gestión Kubernetes con K3s + K9s:**
 
 * 🔹 **Single-node Deployment** – ⚙️ Instalación de K3s en modo local, despliegue de nginx y validación con K9s.
+  
 * 🔹 **Clúster HA** – 🧩 Instalación de K3s con `--cluster-init` y configuración para admitir múltiples nodos.
+  
 * 🔹 **Kompose + Docker Compose** – 🐳 Conversión de `docker-compose.yml` a manifiestos Kubernetes y despliegue en K3s.
+  
 
 ---
 
@@ -39,7 +43,7 @@ curl -sfL https://get.k3s.io | sh -
 Este comando descarga e instala `k3s`, junto con `kubectl`, el cliente de línea de comandos para Kubernetes.
 
 📸 **Evidencia:**
-![instalacion\_k3s](assets/1.%20Instalación%20k3s.png)
+![instalacion_k3s](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/1.%20Instalaci%C3%B3n%20k3s.png)
 
 ---
 
