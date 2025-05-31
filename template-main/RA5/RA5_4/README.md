@@ -241,10 +241,13 @@ services:
 ```
 
 📸 **Definición del stack docker-compose a convertir:**
-![compose\_file](assets/9.%20docker-compose.yml.png)
+
+
+![compose\_file](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/9.%20docker-compose.yml.png)
+
 📑 Contiene 2 servicios nginx y un balanceador expuesto en el puerto 8080.
 
----
+
 
 ### 🔁 Conversión a manifiestos Kubernetes con Kompose
 
@@ -255,38 +258,33 @@ kompose convert
 Esto genera los archivos YAML necesarios para cada servicio y su deployment correspondiente.
 
 📸 **Conversión automática de docker-compose a Kubernetes:**
-![kompose\_convert](assets/10.%20Despliegue%20de%20docker-compose.png)
+
+
+![kompose\_convert](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/10.%20Despliegue%20de%20docker-compose.png)
+
 ⚙️ Kompose crea los `Deployment` y `Service` de cada contenedor definido.
 
 ---
 
 ### 🌍 Exposición del balanceador nginx
 
-El archivo `balanceador-service.yaml` se ajusta para exponer el puerto mediante `NodePort`:
-
-```yaml
-spec:
-  type: NodePort
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30080
-```
-
-Se aplica con:
+El archivo `balanceador-service.yaml` se ajusta para exponer el puerto mediante `NodePort`. Se aplica con:
 
 ```bash
 kubectl apply -f balanceador-service.yaml
 ```
 
-Y se accede vía navegador:
+Y comprobaremos que podemos conectarnos a él:
 
 ```
-http://192.168.1.49:30080
+curl http://192.168.1.49:30080
 ```
 
 📸 **Acceso y verificación del balanceador desde navegador:**
-![verificacion\_compose](assets/11.%20Comprobación%20del%20despliegue.png)
+
+
+![verificacion\_compose](https://github.com/XaviGimReu/PPS-10836126/blob/main/template-main/RA5/RA5_4/assets/11.%20Comprobaci%C3%B3n%20del%20despliegue.png)
+
 🌐 Se valida la respuesta HTTP a través del puerto expuesto 30080.
 
 ---
@@ -296,8 +294,11 @@ http://192.168.1.49:30080
 Se ha logrado completar de forma satisfactoria el ciclo completo de despliegue en Kubernetes con **K3s**, incluyendo:
 
 * 🟢 Creación de clúster single-node.
+  
 * 🔄 Conversión a entorno HA.
+  
 * 🐳 Integración de docker-compose en Kubernetes.
+  
 * 🖥️ Validación visual con `k9s` y pruebas de acceso reales.
 
 Este entorno es útil como base para arquitecturas más complejas, integraciones con CI/CD y plataformas de monitorización.
@@ -306,7 +307,7 @@ Este entorno es útil como base para arquitecturas más complejas, integraciones
 
 ## 📚 Referencias
 
-* [https://k3s.io](https://k3s.io)
-* [https://k9scli.io](https://k9scli.io)
-* [https://kompose.io](https://kompose.io)
-* [https://aulasoftwarelibre.github.io/taller-de-docker/dockerfile/#balanceo-de-carga](https://aulasoftwarelibre.github.io/taller-de-docker/dockerfile/#balanceo-de-carga)
+## 📬 Referencias
+**[assets](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_4/assets)**&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+
+**[manifests](https://github.com/XaviGimReu/PPS-10836126/tree/main/template-main/RA5/RA5_4/manifests)**
