@@ -46,7 +46,7 @@ curl -sfL https://get.k3s.io | sh -
 
 🛠 Se lanza el script oficial de instalación paraconfigurar el nodo maestro.
 
----
+
 
 ### 📦 Despliegue de nginx con 2 réplicas
 
