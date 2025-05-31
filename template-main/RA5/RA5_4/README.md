@@ -109,7 +109,6 @@ Se utiliza K9s para una visualización en tiempo real del estado del clúster y 
 
 ```bash
 curl -sS https://webinstall.dev/k9s | bash
-k9s
 ```
 
 📸 **Instalación de la herramienta K9s:**
@@ -120,7 +119,6 @@ k9s
 Desplegamos `k9s`:
 
 ```bash
-curl -sS https://webinstall.dev/k9s | bash
 k9s
 ```
 
